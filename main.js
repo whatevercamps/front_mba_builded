@@ -41,7 +41,7 @@ module.exports = "/*!\n * Start Bootstrap - SB Admin 2 v4.0.3 (https://startboot
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"todo\" style=\"margin-top: 0\">\n  <ng-flash-message></ng-flash-message>\n  <div id=\"wrapper\">\n    <!-- Sidebar -->\n    <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n\n      <!-- Sidebar - Brand -->\n      <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">\n        <div class=\"sidebar-brand-icon rotate-n-15\">\n            <i class=\"fas fa-box\"></i>\n        </div>\n        <div class=\"sidebar-brand-text mx-3\">MBA<sup>control</sup></div>\n      </a>\n\n      <!-- Divider -->\n      <hr class=\"sidebar-divider my-0\">\n\n      <!-- Nav Item - Dashboard -->\n      <li class=\"nav-item active\" [routerLink]=\"['/warehouses']\" style=\"cursor:pointer\">\n        <a class=\"nav-link\">\n            <i class=\"fas fa-boxes\"></i>\n          <span>Warehouses</span></a>\n      </li>\n\n      <!-- Divider -->\n      <hr class=\"sidebar-divider\">\n\n      <!-- Heading -->\n      <div class=\"sidebar-heading\">\n        Interface\n      </div>\n\n      <!-- Nav Item - Pages Collapse Menu -->\n      <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"true\"\n          aria-controls=\"collapseTwo\">\n          <i class=\"fas fa-fw fa-cog\"></i>\n          <span>Components</span>\n        </a>\n        <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">\n          <div class=\"bg-white py-2 collapse-inner rounded\">\n            <h6 class=\"collapse-header\">Custom Components:</h6>\n            <a class=\"collapse-item\" href=\"buttons.html\">Buttons</a>\n            <a class=\"collapse-item\" href=\"cards.html\">Cards</a>\n          </div>\n        </div>\n      </li>\n\n      <!-- Nav Item - Utilities Collapse Menu -->\n      <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseUtilities\"\n          aria-expanded=\"true\" aria-controls=\"collapseUtilities\">\n          <i class=\"fas fa-fw fa-wrench\"></i>\n          <span>Utilities</span>\n        </a>\n        <div id=\"collapseUtilities\" class=\"collapse\" aria-labelledby=\"headingUtilities\" data-parent=\"#accordionSidebar\">\n          <div class=\"bg-white py-2 collapse-inner rounded\">\n            <h6 class=\"collapse-header\">Custom Utilities:</h6>\n            <a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>\n            <a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>\n            <a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>\n            <a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>\n          </div>\n        </div>\n      </li>\n\n      <!-- Divider -->\n      <hr class=\"sidebar-divider\">\n\n      <!-- Heading -->\n      <div class=\"sidebar-heading\">\n        Addons\n      </div>\n\n      <!-- Nav Item - Pages Collapse Menu -->\n      <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapsePages\" aria-expanded=\"true\"\n          aria-controls=\"collapsePages\">\n          <i class=\"fas fa-fw fa-folder\"></i>\n          <span>Pages</span>\n        </a>\n        <div id=\"collapsePages\" class=\"collapse\" aria-labelledby=\"headingPages\" data-parent=\"#accordionSidebar\">\n          <div class=\"bg-white py-2 collapse-inner rounded\">\n            <h6 class=\"collapse-header\">Login Screens:</h6>\n            <a class=\"collapse-item\" href=\"login.html\">Login</a>\n            <a class=\"collapse-item\" href=\"register.html\">Register</a>\n            <a class=\"collapse-item\" href=\"forgot-password.html\">Forgot Password</a>\n            <div class=\"collapse-divider\"></div>\n            <h6 class=\"collapse-header\">Other Pages:</h6>\n            <a class=\"collapse-item\" href=\"404.html\">404 Page</a>\n            <a class=\"collapse-item\" href=\"blank.html\">Blank Page</a>\n          </div>\n        </div>\n      </li>\n\n      <!-- Nav Item - Charts -->\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"charts.html\">\n          <i class=\"fas fa-fw fa-chart-area\"></i>\n          <span>Charts</span></a>\n      </li>\n\n      <!-- Nav Item - Tables -->\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"tables.html\">\n          <i class=\"fas fa-fw fa-table\"></i>\n          <span>Tables</span></a>\n      </li>\n\n      <!-- Divider -->\n      <hr class=\"sidebar-divider d-none d-md-block\">\n\n      <!-- Sidebar Toggler (Sidebar) -->\n      <div class=\"text-center d-none d-md-inline\">\n        <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>\n      </div>\n\n    </ul>\n    <!-- End of Sidebar -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n      <div id=\"content\">\n        <router-outlet class=\"todo\"></router-outlet>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"todo\" style=\"margin-top: 0\">\n  <ng-flash-message></ng-flash-message>\n  <div id=\"wrapper\" style=\"background-color: #f8f9fc\">\n    <!-- Sidebar -->\n    <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n\n      <!-- Sidebar - Brand -->\n      <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">\n        <div class=\"sidebar-brand-icon rotate-n-15\">\n          <i class=\"fas fa-box\"></i>\n        </div>\n        <div class=\"sidebar-brand-text mx-3\">MBA<sup>control</sup></div>\n      </a>\n\n      <li class=\"nav-item active\" [routerLink]=\"['/login']\" style=\"cursor:pointer\" *ngIf=\"!isLogged()\">\n        <a class=\"nav-link\">\n          <i class=\"fas fa-sign-in-alt\"></i>\n          <span>Iniciar sesión</span></a>\n      </li>\n\n      <!-- Divider -->\n      <hr class=\"sidebar-divider my-0\">\n\n      <!-- Nav Item - Dashboard -->\n      <li class=\"nav-item active\" [routerLink]=\"['/warehouses']\" style=\"cursor:pointer\" *ngIf=\"isLogged()\">\n        <a class=\"nav-link\">\n          <i class=\"fas fa-boxes\"></i>\n          <span>Lista Warehouses</span></a>\n      </li>\n\n      <li class=\"nav-item active\" [routerLink]=\"['/warehouses']\" style=\"cursor:pointer\" *ngIf=\"isLogged()\">\n        <a class=\"nav-link\">\n          <i class=\"fas fa-shipping-fast\"></i>\n          <span>Lista Envios</span></a>\n      </li>\n\n      <!-- Divider -->\n      <hr class=\"sidebar-divider\" *ngIf=\"isLogged() && (authservice.isAdmin() ||authservice.isAgent())\">\n\n      <!-- Nav Item - Pages Collapse Menu -->\n      <li class=\"nav-item\">\n\n        <!--PANEL ADMIN-->\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseAdmin\" aria-expanded=\"true\"\n           aria-controls=\"collapsePages\" *ngIf=\"isLogged() && authservice.isAdmin()\">\n          <i class=\"fas fa-fw fa-folder\"></i>\n          <span>Panel Administrador</span>\n        </a>\n\n        <div id=\"collapseAdmin\" class=\"collapse\" aria-labelledby=\"headingPages\" data-parent=\"#accordionSidebar\" *ngIf=\"isLogged() && authservice.isAdmin()\">\n          <div class=\"bg-white py-2 collapse-inner rounded\">\n            <h6 class=\"collapse-header\">Acciones</h6>\n            <a class=\"collapse-item\" [routerLink]=\"['/usuarios-bodega/crear']\">Nuevo Bodeguista</a>\n            <a class=\"collapse-item\" [routerLink]=\"['/usuarios-admin/crear']\">Nuevo Administrador</a>\n          </div>\n        </div>\n\n        <!--PANEL AGENTE-->\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseAgente\" aria-expanded=\"true\"\n           aria-controls=\"collapsePages\" *ngIf=\"isLogged() && authservice.isAgent()\">\n          <i class=\"fas fa-fw fa-folder\"></i>\n          <span>Panel Agente</span>\n        </a>\n\n        <div id=\"collapseAgente\" class=\"collapse\" aria-labelledby=\"headingPages\" data-parent=\"#accordionSidebar\" *ngIf=\"isLogged() && authservice.isAgent()\">\n          <div class=\"bg-white py-2 collapse-inner rounded\">\n            <h6 class=\"collapse-header\">Acciones</h6>\n            <a class=\"collapse-item\" href=\"login.html\">Nuevo Cliente</a>\n            <a class=\"collapse-item\" href=\"login.html\">Ver Clientes</a>\n            <a class=\"collapse-item\" href=\"login.html\">Ver Pedidos</a>\n\n          </div>\n        </div>\n      </li>\n\n\n      <!-- Divider -->\n      <hr class=\"sidebar-divider d-none d-md-block\" *ngIf=\"isLogged() && (authservice.isAdmin() ||authservice.isAgent())\">\n\n\n      <li class=\"nav-item active\" (click)=\"authservice.logout()\" style=\"cursor:pointer\" *ngIf=\"isLogged()\">\n        <a class=\"nav-link\">\n          <i class=\"fas fa-sign-out-alt\"></i>\n          <span>Cerrar sesión</span></a>\n      </li>\n\n    </ul>\n    <!-- End of Sidebar -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n      <div id=\"content\">\n        <router-outlet class=\"todo\"></router-outlet>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -91,6 +91,22 @@ var AppComponent = /** @class */ (function () {
                 }
             }
         };
+        this.refreshToken = function () {
+            var _this = this;
+            if (this.authservice.loggedIn()) {
+                this.authservice.refreshToken().subscribe(function (data) {
+                    console.log(data);
+                    if (data.token != undefined && data.token != null) {
+                        _this.authservice.storeUserData(data.token);
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+        };
+        this.isLogged = function () {
+            return this.authservice.loggedIn();
+        };
     }
     AppComponent.prototype.mandarTextCatalogo = function () {
         this.dataService.guardarShowTextTrue();
@@ -109,6 +125,9 @@ var AppComponent = /** @class */ (function () {
         }
         var secondsCounter = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["interval"])(100);
         secondsCounter.subscribe(function (n) { return _this.verfiricarInic(); });
+        var mins = 7;
+        var tokenRefresher = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["interval"])(mins * 60 * 1000);
+        tokenRefresher.subscribe(function (n) { return _this.refreshToken(); });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('footer'),
@@ -169,6 +188,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_boxes_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./services/boxes.service */ "./src/app/services/boxes.service.ts");
 /* harmony import */ var _components_warehouses_warehouses_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/warehouses/warehouses.component */ "./src/app/components/warehouses/warehouses.component.ts");
 /* harmony import */ var _services_warehouses_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./services/warehouses.service */ "./src/app/services/warehouses.service.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _components_orders_orders_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/orders/orders.component */ "./src/app/components/orders/orders.component.ts");
+/* harmony import */ var _components_crearUsuarioWarehouse_crearUsuarioWarehouse_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/crearUsuarioWarehouse/crearUsuarioWarehouse.component */ "./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.ts");
+/* harmony import */ var _crear_usuario_admin_crear_usuario_admin_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./crear-usuario-admin/crear-usuario-admin.component */ "./src/app/crear-usuario-admin/crear-usuario-admin.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -205,10 +228,20 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+;
+
 var appRoutes = [
+    { path: '', component: _components_warehouses_warehouses_component__WEBPACK_IMPORTED_MODULE_27__["WarehousesComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]], data: { level: 2 } },
     { path: 'login', component: _components_logingrande_logingrande_component__WEBPACK_IMPORTED_MODULE_17__["LogingrandeComponent"] },
-    { path: 'warehouses', component: _components_warehouses_warehouses_component__WEBPACK_IMPORTED_MODULE_27__["WarehousesComponent"] },
-    { path: 'warehouses/:id', component: _components_warehouse_warehouse_component__WEBPACK_IMPORTED_MODULE_25__["WarehouseComponent"], pathMatch: 'full' }
+    { path: 'add-warehouse', component: _components_crearwarehouse_crearwarehouse_component__WEBPACK_IMPORTED_MODULE_23__["CrearwarehouseComponent"] },
+    { path: 'warehouses', component: _components_warehouses_warehouses_component__WEBPACK_IMPORTED_MODULE_27__["WarehousesComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]], data: { level: 2 } },
+    { path: 'orders', component: _components_orders_orders_component__WEBPACK_IMPORTED_MODULE_30__["OrdersComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]], data: { level: 1 } },
+    { path: 'warehouses/:id', component: _components_warehouse_warehouse_component__WEBPACK_IMPORTED_MODULE_25__["WarehouseComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]], data: { level: 1 }, pathMatch: 'full' },
+    { path: 'usuarios-bodega/crear', component: _components_crearUsuarioWarehouse_crearUsuarioWarehouse_component__WEBPACK_IMPORTED_MODULE_31__["CrearUsuarioWarehouseComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]], data: { level: 3 } },
+    { path: 'usuarios-admin/crear', component: _crear_usuario_admin_crear_usuario_admin_component__WEBPACK_IMPORTED_MODULE_32__["CrearUsuarioAdminComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]], data: { level: 3 } },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -221,7 +254,10 @@ var AppModule = /** @class */ (function () {
                 _components_crearwarehouse_crearwarehouse_component__WEBPACK_IMPORTED_MODULE_23__["CrearwarehouseComponent"],
                 _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_18__["NavbarComponent"],
                 _components_warehouse_warehouse_component__WEBPACK_IMPORTED_MODULE_25__["WarehouseComponent"],
-                _components_warehouses_warehouses_component__WEBPACK_IMPORTED_MODULE_27__["WarehousesComponent"]
+                _components_warehouses_warehouses_component__WEBPACK_IMPORTED_MODULE_27__["WarehousesComponent"],
+                _components_orders_orders_component__WEBPACK_IMPORTED_MODULE_30__["OrdersComponent"],
+                _components_crearUsuarioWarehouse_crearUsuarioWarehouse_component__WEBPACK_IMPORTED_MODULE_31__["CrearUsuarioWarehouseComponent"],
+                _crear_usuario_admin_crear_usuario_admin_component__WEBPACK_IMPORTED_MODULE_32__["CrearUsuarioAdminComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -239,12 +275,108 @@ var AppModule = /** @class */ (function () {
                 _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_7__["FontAwesomeModule"],
                 _material__WEBPACK_IMPORTED_MODULE_24__["MaterialModule"]
             ],
-            providers: [_services_validate_service__WEBPACK_IMPORTED_MODULE_9__["ValidateService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_10__["AuthService"], _guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"], _services_resenias_service__WEBPACK_IMPORTED_MODULE_11__["ReseniasService"], _services_questions_service__WEBPACK_IMPORTED_MODULE_19__["QuestionsService"], _services_bank_service__WEBPACK_IMPORTED_MODULE_20__["BankService"], _services_cdt_service__WEBPACK_IMPORTED_MODULE_12__["CDTService"], _services_data_service__WEBPACK_IMPORTED_MODULE_21__["DataService"], _services_boxes_service__WEBPACK_IMPORTED_MODULE_26__["BoxesService"], _services_warehouses_service__WEBPACK_IMPORTED_MODULE_28__["WarehousesService"]],
+            providers: [
+                _services_validate_service__WEBPACK_IMPORTED_MODULE_9__["ValidateService"],
+                _services_auth_service__WEBPACK_IMPORTED_MODULE_10__["AuthService"],
+                _guards_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"],
+                _services_resenias_service__WEBPACK_IMPORTED_MODULE_11__["ReseniasService"],
+                _services_questions_service__WEBPACK_IMPORTED_MODULE_19__["QuestionsService"], _services_bank_service__WEBPACK_IMPORTED_MODULE_20__["BankService"],
+                _services_cdt_service__WEBPACK_IMPORTED_MODULE_12__["CDTService"],
+                _services_data_service__WEBPACK_IMPORTED_MODULE_21__["DataService"],
+                _services_boxes_service__WEBPACK_IMPORTED_MODULE_26__["BoxesService"],
+                _services_warehouses_service__WEBPACK_IMPORTED_MODULE_28__["WarehousesService"],
+                _services_user_service__WEBPACK_IMPORTED_MODULE_29__["UserService"]
+            ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
             entryComponents: []
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.css":
+/*!**************************************************************************************!*\
+  !*** ./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.css ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\n    padding: 10% 5%;\n}\n\n\n* {\n    box-sizing: border-box;\n}\n\n\n/* Style the input container */\n\n\n.input-container {\n    margin-left: 15px;\n    margin-right: 15px;\n    display: flex;\n    width: 100%;\n    margin-bottom: 15px;\n}\n\n\n/* Style the form icons */\n\n\n.fas {\n    padding: 10px;\n    background: #007bff;\n    border-bottom-left-radius: 0.25rem;\n    border-top-left-radius: 0.25rem;\n    color: white;\n    min-width: 50px;\n    text-align: center;\n}\n\n\n.form-control{\n    border-bottom-left-radius: 0px;\n    border-top-left-radius: 0px;\n    border-left-width: 0px;\n}\n\n\n/* Style the input fields */\n\n\n.input-field  {\n    width: 100%;\n    padding: 10px;\n    outline: none;\n}\n\n\n.input-field:focus .fas{\n    border: 2px solid dodgerblue;\n    border-left-width: 0;\n}\n\n\n.btn:hover {\n    opacity: 1;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.html":
+/*!***************************************************************************************!*\
+  !*** ./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-3\"></div>\n    <div class=\"col-lg-6 col-sm-12\">\n\n      <h2>Crear Usuario Bodeguista</h2>\n      <br>\n\n      <form (submit)=\"crearUsuario()\">\n\n        <div class=\"form-group row\">\n          <!--<label for=\"correo\">Correo</label>-->\n          <div class=\"input-container\">\n            <i class=\"fas fa-envelope \"></i>\n            <input type=\"text\" class=\"form-control\" id=\"correo\" name=\"correo\" placeholder=\"Email\" [(ngModel)]=\"email\">\n          </div>\n        </div>\n\n        <div class=\"form-group row\">\n          <!--<label for=\"correo\">Correo</label>-->\n          <div class=\"input-container\">\n            <i class=\"fas fa-user \"></i>\n            <input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\" placeholder=\"Nombre\" [(ngModel)]=\"name\">\n          </div>\n        </div>\n\n        <input type=\"submit\" class=\"btn btn-primary\" value=\"Crear\">\n      </form>\n    </div>\n    <div class=\"col-lg-3\"></div>\n  </div>\n\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.ts":
+/*!*************************************************************************************!*\
+  !*** ./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.ts ***!
+  \*************************************************************************************/
+/*! exports provided: CrearUsuarioWarehouseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CrearUsuarioWarehouseComponent", function() { return CrearUsuarioWarehouseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CrearUsuarioWarehouseComponent = /** @class */ (function () {
+    function CrearUsuarioWarehouseComponent(userService, flashMessage) {
+        this.userService = userService;
+        this.flashMessage = flashMessage;
+    }
+    CrearUsuarioWarehouseComponent.prototype.ngOnInit = function () {
+        this.email = '';
+        this.name = '';
+    };
+    CrearUsuarioWarehouseComponent.prototype.crearUsuario = function () {
+        var _this = this;
+        this.userService.createWarehouseUser(this.email, this.name).subscribe(function (usuario) {
+            console.log(usuario);
+            _this.flashMessage.showFlashMessage({
+                messages: ['Se creo el usuario' + _this.email + ' exitosamente. Revisar correo para establecer la contraseña.'],
+                type: 'success',
+                timeout: 5000,
+            });
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    CrearUsuarioWarehouseComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-create-warehouse-user',
+            template: __webpack_require__(/*! ./crearUsuarioWarehouse.component.html */ "./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.html"),
+            styles: [__webpack_require__(/*! ./crearUsuarioWarehouse.component.css */ "./src/app/components/crearUsuarioWarehouse/crearUsuarioWarehouse.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"], ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__["NgFlashMessageService"]])
+    ], CrearUsuarioWarehouseComponent);
+    return CrearUsuarioWarehouseComponent;
 }());
 
 
@@ -258,7 +390,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".container {\n    padding: 10% 5%;\n}\n\n* {\n    box-sizing: border-box;\n}\n\n/* Style the input container */\n\n.input-container {\n    margin-left: 15px;\n    margin-right: 15px;\n    display: flex;\n    width: 100%;\n    margin-bottom: 15px;\n}\n\n/* Style the form icons */\n\n.fas {\n    padding: 10px;\n    background: #007bff;\n    border-bottom-left-radius: 0.25rem;\n    border-top-left-radius: 0.25rem;\n    color: white;\n    min-width: 50px;\n    text-align: center;\n}\n\n.form-control {\n    border-bottom-left-radius: 0px;\n    border-top-left-radius: 0px;\n    border-left-width: 0px;\n}\n\n/* Style the input fields */\n\n.input-field {\n    width: 100%;\n    padding: 10px;\n    outline: none;\n}\n\n.input-field:focus .fas {\n    border: 2px solid dodgerblue;\n    border-left-width: 0;\n}\n\n.btn:hover {\n    opacity: 1;\n}"
 
 /***/ }),
 
@@ -269,7 +401,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  \n</p>\n"
+module.exports = "<div class=\"modal fade\" id=\"modalCreateWarehouse\" tabindex=\"-1\" role=\"dialog\"\n  aria-labelledby=\"modalCreateWarehouseTitle\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-body\">\n\n\n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-12\">\n\n              <h2 style=\"text-align: center\">Crear warehouse</h2>\n              <br>\n\n              <form (submit)=\"onCreateWarehouse()\">\n\n                <div class=\"form-group row\">\n                  <!--<label for=\"correo\">Correo</label>-->\n                  <div class=\"input-container\">\n                    <i class=\"fas fa-phone\"></i>\n                    <input type=\"text\" class=\"form-control\" id=\"provider_phone\" name=\"provider_phone\"\n                      placeholder=\"provider phone\" [(ngModel)]=\"provider_phone\">\n                  </div>\n                </div>\n\n                <div class=\"form-group row\">\n                  <!--<label for=\"correo\">Correo</label>-->\n                  <div class=\"input-container\">\n                    <i class=\"fas fa-user \"></i>\n                    <input type=\"text\" class=\"form-control\" id=\"provider_phone\" name=\"provider_phone\"\n                      placeholder=\"client id\" [(ngModel)]=\"client_id\">\n                  </div>\n                </div>\n\n                <input type=\"submit\" class=\"btn btn-primary\" value=\"Crear\" data-toggle=\"modal\" data-target=\"#modalCreateWarehouse\">\n              </form>\n            </div>\n          </div>\n\n\n        </div>\n\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -284,6 +416,8 @@ module.exports = "<p>\n  \n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CrearwarehouseComponent", function() { return CrearwarehouseComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_warehouses_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/warehouses.service */ "./src/app/services/warehouses.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -294,10 +428,31 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var CrearwarehouseComponent = /** @class */ (function () {
-    function CrearwarehouseComponent() {
+    function CrearwarehouseComponent(whService, router) {
+        this.whService = whService;
+        this.router = router;
+        this.observations = [];
+        this.correcto = false;
     }
     CrearwarehouseComponent.prototype.ngOnInit = function () {
+    };
+    CrearwarehouseComponent.prototype.onCreateWarehouse = function () {
+        var _this = this;
+        var wh = {
+            provider_phone: this.provider_phone,
+            client_id: this.client_id,
+            observations: []
+        };
+        this.whService.createWh(wh).subscribe(function (resp) {
+            if (resp.id != null) {
+                _this.router.navigate(['/warehouses/' + resp.id]);
+            }
+        }, function (err) {
+            console.log(err);
+        });
     };
     CrearwarehouseComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -305,7 +460,7 @@ var CrearwarehouseComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./crearwarehouse.component.html */ "./src/app/components/crearwarehouse/crearwarehouse.component.html"),
             styles: [__webpack_require__(/*! ./crearwarehouse.component.css */ "./src/app/components/crearwarehouse/crearwarehouse.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_warehouses_service__WEBPACK_IMPORTED_MODULE_2__["WarehousesService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], CrearwarehouseComponent);
     return CrearwarehouseComponent;
 }());
@@ -321,7 +476,7 @@ var CrearwarehouseComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* @extend display-flex; */\n\ndisplay-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {\n    padding-top: 10px;\n    padding-bottom: 10px;\n    display: flex;\n    display: -webkit-flex;\n}\n\n/* @extend list-type-ulli; */\n\nlist-type-ulli, .socials {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n/* poppins-300 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 300;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-300.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Light\"), local(\"Poppins-Light\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-300italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 300;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Light Italic\"), local(\"Poppins-LightItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-regular - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 400;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-regular.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Regular\"), local(\"Poppins-Regular\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 400;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Italic\"), local(\"Poppins-Italic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-500 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 500;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-500.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Medium\"), local(\"Poppins-Medium\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-500italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 500;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Medium Italic\"), local(\"Poppins-MediumItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-600 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 600;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-600.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins SemiBold\"), local(\"Poppins-SemiBold\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-700 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 700;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-700.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Bold\"), local(\"Poppins-Bold\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-700italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 700;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Bold Italic\"), local(\"Poppins-BoldItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-800 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 800;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-800.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins ExtraBold\"), local(\"Poppins-ExtraBold\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-800italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 800;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins ExtraBold Italic\"), local(\"Poppins-ExtraBoldItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-900 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 900;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-900.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Black\"), local(\"Poppins-Black\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\na:focus, a:active {\n    text-decoration: none;\n    outline: none;\n    transition: all 300ms ease 0s;\n    -moz-transition: all 300ms ease 0s;\n    -webkit-transition: all 300ms ease 0s;\n    -o-transition: all 300ms ease 0s;\n    -ms-transition: all 300ms ease 0s;\n}\n\ninput, select, textarea {\n    outline: none;\n    appearance: unset !important;\n    -moz-appearance: unset !important;\n    -webkit-appearance: unset !important;\n    -o-appearance: unset !important;\n    -ms-appearance: unset !important;\n}\n\ninput::-webkit-outer-spin-button, input::-webkit-inner-spin-button {\n    appearance: none !important;\n    -moz-appearance: none !important;\n    -webkit-appearance: none !important;\n    -o-appearance: none !important;\n    -ms-appearance: none !important;\n    margin: 0;\n}\n\ninput:focus, select:focus, textarea:focus {\n    outline: none;\n    box-shadow: none !important;\n    -moz-box-shadow: none !important;\n    -webkit-box-shadow: none !important;\n    -o-box-shadow: none !important;\n    -ms-box-shadow: none !important;\n}\n\ninput[type=checkbox] {\n    appearance: checkbox !important;\n    -moz-appearance: checkbox !important;\n    -webkit-appearance: checkbox !important;\n    -o-appearance: checkbox !important;\n    -ms-appearance: checkbox !important;\n}\n\ninput[type=radio] {\n    appearance: radio !important;\n    -moz-appearance: radio !important;\n    -webkit-appearance: radio !important;\n    -o-appearance: radio !important;\n    -ms-appearance: radio !important;\n}\n\nimg {\n    max-width: 100%;\n    height: auto;\n}\n\nfigure {\n    margin: 0;\n}\n\np {\n    margin-bottom: 0px;\n    font-size: 15px;\n    color: #777;\n}\n\nh2 {\n    line-height: 1.66;\n    margin: 0;\n    padding: 0;\n    font-weight: bold;\n    color: #222;\n    font-family: Poppins;\n    font-size: 36px;\n}\n\n.main {\n    background: #f8f8f8;\n    padding: 150px 0;\n}\n\n.clear {\n    clear: both;\n}\n\nbody {\n    font-size: 13px;\n    line-height: 1.8;\n    color: #222;\n    background: #f8f8f8;\n    font-weight: 400;\n    font-family: Poppins;\n}\n\n.container {\n    background: #fff;\n    margin: 0 auto;\n    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    border-radius: 20px;\n    -moz-border-radius: 20px;\n    -webkit-border-radius: 20px;\n    -o-border-radius: 20px;\n    -ms-border-radius: 20px;\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);\n}\n\n.display-flex {\n    justify-content: space-between;\n    -moz-justify-content: space-between;\n    -webkit-justify-content: space-between;\n    -o-justify-content: space-between;\n    -ms-justify-content: space-between;\n    align-items: center;\n    -moz-align-items: center;\n    -webkit-align-items: center;\n    -o-align-items: center;\n    -ms-align-items: center;\n}\n\n.display-flex-center {\n    justify-content: center;\n    -moz-justify-content: center;\n    -webkit-justify-content: center;\n    -o-justify-content: center;\n    -ms-justify-content: center;\n    align-items: center;\n    -moz-align-items: center;\n    -webkit-align-items: center;\n    -o-align-items: center;\n    -ms-align-items: center;\n}\n\n.position-center {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    -moz-transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -o-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n\n.signup-content {\n    padding-top: 10px;\n    padding-bottom: 10px;\n}\n\n.signup-form, .signup-image, .signin-form, .signin-image {\n    margin-left: 15px;\n    margin-right: 15px;\n    padding: 0px;\n    overflow: hidden;\n}\n\n.signup-image {\n    margin: 0 55px;\n}\n\n.signup-image {\n    margin-top: 45px;\n}\n\nfigure {\n    margin-bottom: 50px;\n    text-align: center;\n}\n\n.form-submit {\n    display: inline-block;\n    background: #6dabe4;\n    color: #fff;\n    border-bottom: none;\n    width: auto;\n    padding: 15px 39px;\n    border-radius: 5px;\n    -moz-border-radius: 5px;\n    -webkit-border-radius: 5px;\n    -o-border-radius: 5px;\n    -ms-border-radius: 5px;\n    margin-top: 5px;\n    cursor: pointer;\n}\n\n.form-submit:hover {\n    background: #4292dc;\n}\n\n#signin {\n    margin-top: 16px;\n}\n\n.signup-image-link {\n    font-size: 14px;\n    color: #222;\n    display: block;\n    text-align: center;\n}\n\n.term-service {\n    font-size: 13px;\n    color: #222;\n}\n\n.signup-form {\n    margin-left: 15px;\n    margin-right: 15px;\n    padding: 0px;\n}\n\n.register-form {\n    width: 100%;\n}\n\n.form-group {\n    position: relative;\n    margin-bottom: 25px;\n    overflow: hidden;\n}\n\n.form-group:last-child {\n    margin-bottom: 0px;\n}\n\ninput {\n    width: 100%;\n    display: block;\n    border: none;\n    border-bottom: 1px solid #999;\n    padding: 6px 30px;\n    font-family: Poppins;\n    box-sizing: border-box;\n}\n\ninput::-webkit-input-placeholder {\n    color: #999;\n}\n\ninput::-moz-placeholder {\n    color: #999;\n}\n\ninput:-ms-input-placeholder {\n    color: #999;\n}\n\ninput:-moz-placeholder {\n    color: #999;\n}\n\ninput:focus {\n    border-bottom: 1px solid #222;\n}\n\ninput:focus::-webkit-input-placeholder {\n    color: #222;\n}\n\ninput:focus::-moz-placeholder {\n    color: #222;\n}\n\ninput:focus:-ms-input-placeholder {\n    color: #222;\n}\n\ninput:focus:-moz-placeholder {\n    color: #222;\n}\n\ninput[type=checkbox]:not(old) {\n    width: 2em;\n    margin: 0;\n    padding: 0;\n    font-size: 1em;\n    display: none;\n}\n\ninput[type=checkbox]:not(old)+label {\n    display: inline-block;\n    line-height: 1.5em;\n    margin-top: 6px;\n}\n\ninput[type=checkbox]:not(old)+label>span {\n    display: inline-block;\n    width: 13px;\n    height: 13px;\n    margin-right: 15px;\n    margin-bottom: 3px;\n    border: 1px solid #999;\n    border-radius: 2px;\n    -moz-border-radius: 2px;\n    -webkit-border-radius: 2px;\n    -o-border-radius: 2px;\n    -ms-border-radius: 2px;\n    background: white;\n    background-image: linear-gradient(white, white);\n    vertical-align: bottom;\n}\n\ninput[type=checkbox]:not(old):checked+label>span {\n    background-image: linear-gradient(white, white);\n}\n\ninput[type=checkbox]:not(old):checked+label>span:before {\n    content: '\\f26b';\n    display: block;\n    color: #222;\n    font-size: 11px;\n    line-height: 1.2;\n    text-align: center;\n    font-family: 'Material-Design-Iconic-Font';\n    font-weight: bold;\n}\n\n.agree-term {\n    display: inline-block;\n    width: auto;\n}\n\nlabel {\n    position: absolute;\n    left: 0;\n    top: 50%;\n    transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -webkit-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    color: #222;\n}\n\n.label-has-error {\n    top: 22%;\n}\n\nlabel.error {\n    position: relative;\n    background: url(\"/assets/img/unchecked.gif\") no-repeat;\n    background-position-y: 3px;\n    padding-left: 20px;\n    display: block;\n    margin-top: 20px;\n}\n\nlabel.valid {\n    display: block;\n    position: absolute;\n    right: 0;\n    left: auto;\n    margin-top: -6px;\n    width: 20px;\n    height: 20px;\n    background: transparent;\n}\n\nlabel.valid:after {\n    font-family: 'Material-Design-Iconic-Font';\n    content: '\\f269';\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    /* right: 0; */\n    font-size: 16px;\n    color: green;\n}\n\n.label-agree-term {\n    position: relative;\n    top: 0%;\n    transform: translateY(0);\n    -moz-transform: translateY(0);\n    -webkit-transform: translateY(0);\n    -o-transform: translateY(0);\n    -ms-transform: translateY(0);\n}\n\n.material-icons-name {\n    font-size: 18px;\n}\n\n.signin-content {\n    padding-top: 67px;\n    padding-bottom: 87px;\n}\n\n.social-login {\n    align-items: center;\n    -moz-align-items: center;\n    -webkit-align-items: center;\n    -o-align-items: center;\n    -ms-align-items: center;\n    margin-top: 80px;\n}\n\n.social-label {\n    display: inline-block;\n    margin-right: 15px;\n}\n\n.socials li {\n    padding: 5px;\n}\n\n.socials li:last-child {\n    margin-right: 0px;\n}\n\n.socials li a {\n    text-decoration: none;\n}\n\n.socials li a i {\n    width: 30px;\n    height: 30px;\n    color: #fff;\n    font-size: 14px;\n    border-radius: 5px;\n    -moz-border-radius: 5px;\n    -webkit-border-radius: 5px;\n    -o-border-radius: 5px;\n    -ms-border-radius: 5px;\n    transform: translateZ(0);\n    -moz-transform: translateZ(0);\n    -webkit-transform: translateZ(0);\n    -o-transform: translateZ(0);\n    -ms-transform: translateZ(0);\n    transition-duration: 0.3s;\n    transition-property: -webkit-transform;\n    transition-property: transform;\n    transition-property: transform, -webkit-transform;\n    transition-timing-function: ease-out;\n}\n\n.socials li:hover a i {\n    -webkit-transform: scale(1.3) translateZ(0);\n    transform: scale(1.3) translateZ(0);\n}\n\n.zmdi-facebook {\n    background: #3b5998;\n}\n\n.zmdi-twitter {\n    background: #1da0f2;\n}\n\n.zmdi-google {\n    background: #e72734;\n}\n\n.signin-form {\n    margin-right: 90px;\n    margin-left: 80px;\n}\n\n.signin-image {\n    margin-left: 110px;\n    margin-right: 20px;\n    margin-top: 10px;\n}\n\n@media screen and (max-width: 1200px) {\n    .container {\n        max-width: 100%;\n    }\n}\n\n@media screen and (min-width: 1024px) {\n    .container {\n        max-width: 1200px;\n    }\n}\n\n@media screen and (max-width: 768px) {\n    .signup-content, .signin-content {\n        padding-top: 10px;\n        padding-bottom: 10px;\n        flex-direction: column;\n        -moz-flex-direction: column;\n        -o-flex-direction: column;\n        justify-content: center;\n        -moz-justify-content: center;\n        -webkit-justify-content: center;\n        -o-justify-content: center;\n        -ms-justify-content: center;\n    }\n    .signup-form {\n        margin-left: 15px;\n        margin-right: 15px;\n        padding: 0px;\n    }\n    .signin-image {\n        margin-left: 0px;\n        margin-right: 0px;\n        margin-top: 50px;\n        order: 2;\n        -moz-order: 2;\n        -webkit-order: 2;\n        -o-order: 2;\n        -ms-order: 2;\n    }\n    .signup-form, .signup-image, .signin-form, .signin-image {\n        width: auto;\n        margin-left: 15px;\n        margin-right: 15px;\n        padding: 0px;\n    }\n    .social-login {\n        justify-content: center;\n        -moz-justify-content: center;\n        -webkit-justify-content: center;\n        -o-justify-content: center;\n        -ms-justify-content: center;\n    }\n    .form-button {\n        text-align: center;\n    }\n    .signin-form {\n        order: 1;\n        -moz-order: 1;\n        -webkit-order: 1;\n        -o-order: 1;\n        -ms-order: 1;\n        margin-right: 0px;\n        margin-left: 0px;\n        padding: 0 30px;\n    }\n    .form-title {\n        text-align: center;\n    }\n}\n\n@media screen and (max-width: 400px) {\n    .social-login {\n        flex-direction: column;\n        -moz-flex-direction: column;\n        -o-flex-direction: column;\n    }\n    .social-label {\n        margin-right: 0px;\n        margin-bottom: 10px;\n    }\n}\n\n@-webkit-keyframes flicker {\n    0% {\n        opacity: 1;\n    }\n    3% {\n        opacity: 0.4;\n    }\n    6% {\n        opacity: 1;\n    }\n    7% {\n        opacity: 0.4;\n    }\n    8% {\n        opacity: 1;\n    }\n    9% {\n        opacity: 0.4;\n    }\n    10% {\n        opacity: 1;\n    }\n    100% {\n        opacity: 1;\n    }\n}\n\n@keyframes flicker {\n    0% {\n        opacity: 1;\n    }\n    3% {\n        opacity: 0.4;\n    }\n    6% {\n        opacity: 1;\n    }\n    7% {\n        opacity: 0.4;\n    }\n    8% {\n        opacity: 1;\n    }\n    9% {\n        opacity: 0.4;\n    }\n    10% {\n        opacity: 1;\n    }\n    100% {\n        opacity: 1;\n    }\n}\n\n#siguienteregistro {\n    width: 60px;\n}\n\n#logginer {\n    cursor: pointer;\n}\n\n.siguiente {\n    cursor: pointer;\n}\n\n#loginner small:hover {\n    cursor: pointer;\n    color: blueviolet;\n}\n\n/*# sourceMappingURL=style.css.map */\n\n.card {\n    background: white;\n    bottom: 0;\n    height: 100px;\n    left: 0;\n    margin: auto;\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 100px;\n    border-style: none;\n}\n\n.btn {\n    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .1);\n    font-weight: 700\n}\n\n.btn-empieza, .btn-empieza:hover, .btn-empieza:active, .btn-empieza:visited {\n    background-color: #0E3B69 !important;\n    color: white !important;\n}"
+module.exports = "/* @extend display-flex; */\n\ndisplay-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {\n    padding-top: 10px;\n    padding-bottom: 10px;\n    display: flex;\n    display: -webkit-flex;\n}\n\n/* @extend list-type-ulli; */\n\nlist-type-ulli, .socials {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n/* poppins-300 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 300;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-300.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Light\"), local(\"Poppins-Light\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-300italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 300;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Light Italic\"), local(\"Poppins-LightItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-300italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-regular - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 400;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-regular.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Regular\"), local(\"Poppins-Regular\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-regular.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 400;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Italic\"), local(\"Poppins-Italic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-500 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 500;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-500.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Medium\"), local(\"Poppins-Medium\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-500italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 500;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Medium Italic\"), local(\"Poppins-MediumItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-500italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-600 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 600;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-600.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins SemiBold\"), local(\"Poppins-SemiBold\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-600.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-700 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 700;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-700.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Bold\"), local(\"Poppins-Bold\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-700italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 700;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Bold Italic\"), local(\"Poppins-BoldItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-700italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-800 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 800;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-800.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins ExtraBold\"), local(\"Poppins-ExtraBold\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-800italic - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: italic;\n    font-weight: 800;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins ExtraBold Italic\"), local(\"Poppins-ExtraBoldItalic\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-800italic.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\n/* poppins-900 - latin */\n\n@font-face {\n    font-family: 'Poppins';\n    font-style: normal;\n    font-weight: 900;\n    src: url(\"/assets/fonts/poppins/poppins-v5-latin-900.eot\");\n    /* IE9 Compat Modes */\n    src: local(\"Poppins Black\"), local(\"Poppins-Black\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.woff2\") format(\"woff2\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.woff\") format(\"woff\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.ttf\") format(\"truetype\"), url(\"/assets/fonts/poppins/poppins-v5-latin-900.svg#Poppins\") format(\"svg\");\n    /* Legacy iOS */\n}\n\na:focus, a:active {\n    text-decoration: none;\n    outline: none;\n    transition: all 300ms ease 0s;\n    -moz-transition: all 300ms ease 0s;\n    -webkit-transition: all 300ms ease 0s;\n    -o-transition: all 300ms ease 0s;\n    -ms-transition: all 300ms ease 0s;\n}\n\ninput, select, textarea {\n    outline: none;\n    appearance: unset !important;\n    -moz-appearance: unset !important;\n    -webkit-appearance: unset !important;\n    -o-appearance: unset !important;\n    -ms-appearance: unset !important;\n}\n\ninput::-webkit-outer-spin-button, input::-webkit-inner-spin-button {\n    appearance: none !important;\n    -moz-appearance: none !important;\n    -webkit-appearance: none !important;\n    -o-appearance: none !important;\n    -ms-appearance: none !important;\n    margin: 0;\n}\n\ninput:focus, select:focus, textarea:focus {\n    outline: none;\n    box-shadow: none !important;\n    -moz-box-shadow: none !important;\n    -webkit-box-shadow: none !important;\n    -o-box-shadow: none !important;\n    -ms-box-shadow: none !important;\n}\n\ninput[type=checkbox] {\n    appearance: checkbox !important;\n    -moz-appearance: checkbox !important;\n    -webkit-appearance: checkbox !important;\n    -o-appearance: checkbox !important;\n    -ms-appearance: checkbox !important;\n}\n\ninput[type=radio] {\n    appearance: radio !important;\n    -moz-appearance: radio !important;\n    -webkit-appearance: radio !important;\n    -o-appearance: radio !important;\n    -ms-appearance: radio !important;\n}\n\nimg {\n    max-width: 100%;\n    height: auto;\n}\n\nfigure {\n    margin: 0;\n}\n\np {\n    margin-bottom: 0px;\n    font-size: 15px;\n    color: #777;\n}\n\nh2 {\n    line-height: 1.66;\n    margin: 0;\n    padding: 0;\n    font-weight: bold;\n    color: #222;\n    font-family: Poppins;\n    font-size: 36px;\n}\n\n.main {\n    background: #f8f8f8;\n    padding: 150px 0;\n}\n\n.clear {\n    clear: both;\n}\n\nbody {\n    font-size: 13px;\n    line-height: 1.8;\n    color: #222;\n    background: #f8f8f8;\n    font-weight: 400;\n    font-family: Poppins;\n}\n\n.container {\n    background: #fff;\n    margin: 0 auto;\n    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    border-radius: 20px;\n    -moz-border-radius: 20px;\n    -webkit-border-radius: 20px;\n    -o-border-radius: 20px;\n    -ms-border-radius: 20px;\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);\n}\n\n.display-flex {\n    justify-content: space-between;\n    -moz-justify-content: space-between;\n    -webkit-justify-content: space-between;\n    -o-justify-content: space-between;\n    -ms-justify-content: space-between;\n    align-items: center;\n    -moz-align-items: center;\n    -webkit-align-items: center;\n    -o-align-items: center;\n    -ms-align-items: center;\n}\n\n.display-flex-center {\n    justify-content: center;\n    -moz-justify-content: center;\n    -webkit-justify-content: center;\n    -o-justify-content: center;\n    -ms-justify-content: center;\n    align-items: center;\n    -moz-align-items: center;\n    -webkit-align-items: center;\n    -o-align-items: center;\n    -ms-align-items: center;\n}\n\n.position-center {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    -moz-transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -o-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n\n.signup-content {\n    padding-top: 10px;\n    padding-bottom: 10px;\n}\n\n.signup-form, .signup-image, .signin-form, .signin-image {\n    margin-left: 15px;\n    margin-right: 15px;\n    padding: 0px;\n    overflow: hidden;\n}\n\n.signup-image {\n    margin: 0 55px;\n}\n\n.signup-image {\n    margin-top: 45px;\n}\n\nfigure {\n    margin-bottom: 50px;\n    text-align: center;\n}\n\n.form-submit {\n    display: inline-block;\n    background: #6dabe4;\n    color: #fff;\n    border-bottom: none;\n    width: auto;\n    padding: 15px 39px;\n    border-radius: 5px;\n    -moz-border-radius: 5px;\n    -webkit-border-radius: 5px;\n    -o-border-radius: 5px;\n    -ms-border-radius: 5px;\n    margin-top: 5px;\n    cursor: pointer;\n}\n\n.form-submit:hover {\n    background: #4292dc;\n}\n\n#signin {\n    margin-top: 16px;\n}\n\n.signup-image-link {\n    font-size: 14px;\n    color: #222;\n    display: block;\n    text-align: center;\n}\n\n.term-service {\n    font-size: 13px;\n    color: #222;\n}\n\n.signup-form {\n    margin-left: 15px;\n    margin-right: 15px;\n    padding: 0px;\n}\n\n.register-form {\n    width: 100%;\n}\n\n.form-group {\n    position: relative;\n    margin-bottom: 25px;\n    overflow: hidden;\n}\n\n.form-group:last-child {\n    margin-bottom: 0px;\n}\n\ninput {\n    width: 100%;\n    display: block;\n    border: none;\n    border-bottom: 1px solid #999;\n    padding: 6px 30px;\n    font-family: Poppins;\n    box-sizing: border-box;\n}\n\ninput::-webkit-input-placeholder {\n    color: #999;\n}\n\ninput::-moz-placeholder {\n    color: #999;\n}\n\ninput:-ms-input-placeholder {\n    color: #999;\n}\n\ninput:-moz-placeholder {\n    color: #999;\n}\n\ninput:focus {\n    border-bottom: 1px solid #222;\n}\n\ninput:focus::-webkit-input-placeholder {\n    color: #222;\n}\n\ninput:focus::-moz-placeholder {\n    color: #222;\n}\n\ninput:focus:-ms-input-placeholder {\n    color: #222;\n}\n\ninput:focus:-moz-placeholder {\n    color: #222;\n}\n\ninput[type=checkbox]:not(old) {\n    width: 2em;\n    margin: 0;\n    padding: 0;\n    font-size: 1em;\n    display: none;\n}\n\ninput[type=checkbox]:not(old)+label {\n    display: inline-block;\n    line-height: 1.5em;\n    margin-top: 6px;\n}\n\ninput[type=checkbox]:not(old)+label>span {\n    display: inline-block;\n    width: 13px;\n    height: 13px;\n    margin-right: 15px;\n    margin-bottom: 3px;\n    border: 1px solid #999;\n    border-radius: 2px;\n    -moz-border-radius: 2px;\n    -webkit-border-radius: 2px;\n    -o-border-radius: 2px;\n    -ms-border-radius: 2px;\n    background: white;\n    background-image: linear-gradient(white, white);\n    vertical-align: bottom;\n}\n\ninput[type=checkbox]:not(old):checked+label>span {\n    background-image: linear-gradient(white, white);\n}\n\ninput[type=checkbox]:not(old):checked+label>span:before {\n    content: '\\f26b';\n    display: block;\n    color: #222;\n    font-size: 11px;\n    line-height: 1.2;\n    text-align: center;\n    font-family: 'Material-Design-Iconic-Font';\n    font-weight: bold;\n}\n\n.agree-term {\n    display: inline-block;\n    width: auto;\n}\n\nlabel {\n    position: absolute;\n    left: 0;\n    top: 50%;\n    transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -webkit-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    color: #222;\n}\n\n.label-has-error {\n    top: 22%;\n}\n\nlabel.error {\n    position: relative;\n    background: url(\"/assets/img/unchecked.gif\") no-repeat;\n    background-position-y: 3px;\n    padding-left: 20px;\n    display: block;\n    margin-top: 20px;\n}\n\nlabel.valid {\n    display: block;\n    position: absolute;\n    right: 0;\n    left: auto;\n    margin-top: -6px;\n    width: 20px;\n    height: 20px;\n    background: transparent;\n}\n\nlabel.valid:after {\n    font-family: 'Material-Design-Iconic-Font';\n    content: '\\f269';\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    /* right: 0; */\n    font-size: 16px;\n    color: green;\n}\n\n.label-agree-term {\n    position: relative;\n    top: 0%;\n    transform: translateY(0);\n    -moz-transform: translateY(0);\n    -webkit-transform: translateY(0);\n    -o-transform: translateY(0);\n    -ms-transform: translateY(0);\n}\n\n.material-icons-name {\n    font-size: 18px;\n}\n\n.signin-content {\n    padding-top: 67px;\n    padding-bottom: 87px;\n}\n\n.social-login {\n    align-items: center;\n    -moz-align-items: center;\n    -webkit-align-items: center;\n    -o-align-items: center;\n    -ms-align-items: center;\n    margin-top: 80px;\n}\n\n.social-label {\n    display: inline-block;\n    margin-right: 15px;\n}\n\n.socials li {\n    padding: 5px;\n}\n\n.socials li:last-child {\n    margin-right: 0px;\n}\n\n.socials li a {\n    text-decoration: none;\n}\n\n.socials li a i {\n    width: 30px;\n    height: 30px;\n    color: #fff;\n    font-size: 14px;\n    border-radius: 5px;\n    -moz-border-radius: 5px;\n    -webkit-border-radius: 5px;\n    -o-border-radius: 5px;\n    -ms-border-radius: 5px;\n    transform: translateZ(0);\n    -moz-transform: translateZ(0);\n    -webkit-transform: translateZ(0);\n    -o-transform: translateZ(0);\n    -ms-transform: translateZ(0);\n    transition-duration: 0.3s;\n    transition-property: -webkit-transform;\n    transition-property: transform;\n    transition-property: transform, -webkit-transform;\n    transition-timing-function: ease-out;\n}\n\n.socials li:hover a i {\n    -webkit-transform: scale(1.3) translateZ(0);\n    transform: scale(1.3) translateZ(0);\n}\n\n.zmdi-facebook {\n    background: #3b5998;\n}\n\n.zmdi-twitter {\n    background: #1da0f2;\n}\n\n.zmdi-google {\n    background: #e72734;\n}\n\n.signin-form {\n    margin-right: 90px;\n    margin-left: 80px;\n}\n\n.signin-image {\n    margin-left: 110px;\n    margin-right: 20px;\n    margin-top: 10px;\n}\n\n@media screen and (max-width: 1200px) {\n    .container {\n        max-width: 100%;\n    }\n}\n\n@media screen and (min-width: 1024px) {\n    .container {\n        max-width: 1200px;\n    }\n}\n\n@media screen and (max-width: 768px) {\n    .signup-content, .signin-content {\n        padding-top: 10px;\n        padding-bottom: 10px;\n        flex-direction: column;\n        -moz-flex-direction: column;\n        -o-flex-direction: column;\n        justify-content: center;\n        -moz-justify-content: center;\n        -webkit-justify-content: center;\n        -o-justify-content: center;\n        -ms-justify-content: center;\n    }\n    .signup-form {\n        margin-left: 15px;\n        margin-right: 15px;\n        padding: 0px;\n    }\n    .signin-image {\n        margin-left: 0px;\n        margin-right: 0px;\n        margin-top: 50px;\n        order: 2;\n        -moz-order: 2;\n        -webkit-order: 2;\n        -o-order: 2;\n        -ms-order: 2;\n    }\n    .signup-form, .signup-image, .signin-form, .signin-image {\n        width: auto;\n        margin-left: 15px;\n        margin-right: 15px;\n        padding: 0px;\n    }\n    .social-login {\n        justify-content: center;\n        -moz-justify-content: center;\n        -webkit-justify-content: center;\n        -o-justify-content: center;\n        -ms-justify-content: center;\n    }\n    .form-button {\n        text-align: center;\n    }\n    .signin-form {\n        order: 1;\n        -moz-order: 1;\n        -webkit-order: 1;\n        -o-order: 1;\n        -ms-order: 1;\n        margin-right: 0px;\n        margin-left: 0px;\n        padding: 0 30px;\n    }\n    .form-title {\n        text-align: center;\n    }\n}\n\n@media screen and (max-width: 400px) {\n    .social-login {\n        flex-direction: column;\n        -moz-flex-direction: column;\n        -o-flex-direction: column;\n    }\n    .social-label {\n        margin-right: 0px;\n        margin-bottom: 10px;\n    }\n}\n\n@-webkit-keyframes flicker {\n    0% {\n        opacity: 1;\n    }\n    3% {\n        opacity: 0.4;\n    }\n    6% {\n        opacity: 1;\n    }\n    7% {\n        opacity: 0.4;\n    }\n    8% {\n        opacity: 1;\n    }\n    9% {\n        opacity: 0.4;\n    }\n    10% {\n        opacity: 1;\n    }\n    100% {\n        opacity: 1;\n    }\n}\n\n@keyframes flicker {\n    0% {\n        opacity: 1;\n    }\n    3% {\n        opacity: 0.4;\n    }\n    6% {\n        opacity: 1;\n    }\n    7% {\n        opacity: 0.4;\n    }\n    8% {\n        opacity: 1;\n    }\n    9% {\n        opacity: 0.4;\n    }\n    10% {\n        opacity: 1;\n    }\n    100% {\n        opacity: 1;\n    }\n}\n\n#siguienteregistro {\n    width: 60px;\n}\n\n#logginer {\n    cursor: pointer;\n}\n\n.siguiente {\n    cursor: pointer;\n}\n\n#loginner small:hover {\n    cursor: pointer;\n    color: blueviolet;\n}\n\n/*# sourceMappingURL=style.css.map */\n\n.card {\n    background: white;\n    bottom: 0;\n    height: 100px;\n    left: 0;\n    margin: auto;\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 100px;\n    border-style: none;\n}\n\n.btn {\n    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .1);\n    font-weight: 700\n}\n\n.btn-empieza, .btn-empieza:hover, .btn-empieza:active, .btn-empieza:visited {\n    background-color: #0E3B69 !important;\n    color: white !important;\n}\n\n.login-form{\n    width: 22rem;\n    margin: auto;\n}"
 
 /***/ }),
 
@@ -332,7 +487,7 @@ module.exports = "/* @extend display-flex; */\n\ndisplay-flex, .display-flex, .d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card container\" style=\"width: 16rem; height: 18rem\">\n  <div class=\"signup-content text-center\">\n    <div class=\"signup-form\">\n      <form (submit)=\"onLoginSubmit()\" class=\"login-form\" id=\"register-form\">\n        <h2 class=\"form-title\">Inicia</h2>\n        <div class=\"form-group has-error has-feedback\">\n          <input [attr.class]=\"'form-control ' + inputvalido\" type=\"email\" [(ngModel)]=\"username\" name=\"username\"\n            id=\"username\" placeholder=\"Tu Email\" />\n        </div>\n        <div class=\"form-group\">\n          <input [attr.class]=\"'form-control ' + inputvalido\" type=\"password\" name=\"password\" id=\"password\"\n            [(ngModel)]=\"password\" placeholder=\"Tu Contraseña\" />\n        </div>\n        <div class=\"form-group\" style=\"  margin-bottom: 0;\">\n          <small id=\"correoErroneo\" [attr.class]=\"avisoLoginTextTipo\">\n            {{avisoLoginText}}\n          </small>\n          <input type=\"submit\" name=\"signup\" id=\"signup\" class=\"btn btn-empieza\" value=\"Entrar ahora\" />\n        </div>\n        <small id=\"logginer\" (click)=\"llevaralregistro()\">¿No tienes cuenta?</small>\n      </form>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"card container\" style=\"width: 25rem; height: 18rem\">\n  <div class=\"signup-content text-center\">\n    <div class=\"signup-form\">\n      <form (submit)=\"onLoginSubmit()\" class=\"login-form\" id=\"register-form\">\n        <h2 class=\"form-title\">LOGIN</h2>\n        <div class=\"form-group has-error has-feedback\">\n          <input [attr.class]=\"'form-control ' + inputvalido\" type=\"email\" [(ngModel)]=\"username\" name=\"username\"\n            id=\"username\" placeholder=\"Tu Email\" />\n        </div>\n        <div class=\"form-group\">\n          <input [attr.class]=\"'form-control ' + inputvalido\" type=\"password\" name=\"password\" id=\"password\"\n            [(ngModel)]=\"password\" placeholder=\"Tu Contraseña\" />\n        </div>\n        <div class=\"form-group\" style=\"  margin-bottom: 0;\">\n          <small id=\"correoErroneo\" [attr.class]=\"avisoLoginTextTipo\">\n            {{avisoLoginText}}\n          </small>\n          <input type=\"submit\" name=\"signup\" id=\"signup\" class=\"btn btn-empieza\" value=\"Entrar ahora\" />\n        </div>\n        <small id=\"logginer\" (click)=\"llevaralregistro()\">¿No tienes cuenta?</small>\n      </form>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -383,7 +538,7 @@ var LogingrandeComponent = /** @class */ (function () {
     LogingrandeComponent.prototype.onLoginSubmit = function () {
         var _this = this;
         var user = {
-            username: this.username,
+            email: this.username,
             password: this.password
         };
         console.log(user);
@@ -392,31 +547,26 @@ var LogingrandeComponent = /** @class */ (function () {
             console.log(data);
             if (data.token != undefined && data.token != null) {
                 _this.authService.storeUserData(data.token);
-                var completo = user.username.replace(/\./g, "_");
-                completo = completo.replace(/@/g, "");
-                _this.flashMessage.showFlashMessage({
-                    messages: ['Acceso correcto'],
-                    type: 'success', timeout: 1000
-                });
-                _this.authService.getProfile(data.token, completo).subscribe(function (data) {
+                _this.authService.getProfile(data.token).subscribe(function (data) {
                     console.log('guardado');
                     console.log(data);
                     _this.authService.guardarUsuario(data);
-                    _this.router.navigate(['']);
+                    var ruta = data.role == "admin" ? "warehouses" : "orders";
+                    _this.router.navigate([ruta]);
                 }, function (err) {
                     console.log('no guardado');
                     console.log(err);
                 });
             }
             else {
-                var err = "Error de login. ";
+                var error = "Error de login. ";
                 if (data.non_field_errors != undefined && data.non_field_errors != null) {
-                    err += data.non_field_errors;
+                    error += data.non_field_errors;
                 }
-                err += " . Volver a intentar";
+                error += " . Volver a intentar";
                 _this.flashMessage.showFlashMessage({
-                    messages: [data.msg],
-                    type: 'danger', timeout: 1000
+                    messages: [error],
+                    type: 'danger', timeout: 3000
                 });
             }
         }, function (error) {
@@ -537,6 +687,72 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/orders/orders.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/orders/orders.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".morph-shape {\n\tposition: absolute;\n\twidth: 240px;\n\theight: 100%;\n\ttop: 0;\n\tright: 0;\n}\n\n.morph-shape svg path {\n\tstroke: #5f656f;\n\tstroke-width: 5px;\n}"
+
+/***/ }),
+
+/***/ "./src/app/components/orders/orders.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/orders/orders.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/orders/orders.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/orders/orders.component.ts ***!
+  \*******************************************************/
+/*! exports provided: OrdersComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrdersComponent", function() { return OrdersComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var OrdersComponent = /** @class */ (function () {
+    function OrdersComponent() {
+    }
+    OrdersComponent.prototype.ngOnInit = function () {
+        this.boxheight = 60;
+        this.boxlarge = 50;
+        this.boxwidth = 30;
+    };
+    OrdersComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-orders',
+            template: __webpack_require__(/*! ./orders.component.html */ "./src/app/components/orders/orders.component.html"),
+            styles: [__webpack_require__(/*! ./orders.component.css */ "./src/app/components/orders/orders.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], OrdersComponent);
+    return OrdersComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/warehouse/warehouse.component.css":
 /*!**************************************************************!*\
   !*** ./src/app/components/warehouse/warehouse.component.css ***!
@@ -555,7 +771,7 @@ module.exports = "/*!\n * Start Bootstrap - SB Admin 2 v4.0.3 (https://startboot
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\" *ngIf=\"cargado\" style=\"height: 100%;\">\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\" style=\"background-color: #dbdbdb\">\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\">Warehouse ID: {{wh.id}}</h1>\n        </div>\n\n        <!-- Content Row -->\n        <div class=\"row\">\n\n          <!-- Earnings (Monthly) Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-primary shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">Fecha de ingreso</div>\n                    <div class=\"h5 mb-0 font-weight-bold text-gray-800\">{{wh.date_created.split('T')[0]}}</div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-calendar fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Earnings (Monthly) Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-success shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-success text-uppercase mb-1\">Costo (aproximado)</div>\n                    <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$2'500.000</div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-dollar-sign fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Earnings (Monthly) Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-info shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-info text-uppercase mb-1\">Estado de envio</div>\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col-auto\">\n                        <div class=\"h5 mb-0 mr-3 font-weight-bold text-gray-800\">80%</div>\n                      </div>\n                      <div class=\"col\">\n                        <div class=\"progress progress-sm mr-2\">\n                          <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\"\n                            aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-clipboard-list fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Pending Requests Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-warning shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-warning text-uppercase mb-1\">Observaciones</div>\n                    <div class=\"h5 mb-0 font-weight-bold text-gray-800\">2</div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-comments fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <!-- Content Row -->\n\n        <div class=\"row\">\n\n          <!-- Area Chart -->\n          <div class=\"col-xl-8 col-lg-7\">\n            <div class=\"card shadow mb-4\">\n              <!-- Card Header - Dropdown -->\n              <div class=\"card-header py-3 d-flex flex-row align-items-center justify-content-between\">\n                <h6 class=\"m-0 font-weight-bold text-primary\">Cajas</h6>\n              </div>\n              <!-- Card Body -->\n              <div class=\"card-body\" style=\"overflow-y: scroll;\">\n                <div class=\"chart-area\">\n                  <div class=\"container\">\n                    <div class=\"row\">\n                      <div class=\"col-xl-3 col-md-6 mb-4\" style=\"cursor: pointer\" data-toggle=\"modal\"\n                        data-target=\"#modalCrearCaja\">\n                        <div class=\"card border-left-primary shadow h-100 py-2\">\n                          <div class=\"card-body text-center\"\n                            style=\"padding-top:0.3rem !important; padding-bottom:0.3rem !important;\">\n                            <div class=\"row no-gutters align-items-center\">\n                              <div class=\"col mr-2 text-center\">\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  <i class=\"fas fa-plus fa-4x\"></i>\n                                </div>\n                              </div>\n                              <div class=\"col-auto text-center\">\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  <span> Agregar caja </span>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div class=\"col-xl-3 col-md-6 mb-4\" *ngFor=\"let box of wh.boxes\">\n                        <div class=\"card border-left-primary shadow h-100 py-2\">\n                          <div class=\"card-body\"\n                            style=\"padding-top:0.3rem !important; padding-bottom:0.3rem !important;\">\n                            <div class=\"row no-gutters align-items-center\">\n                              <div class=\"col mr-2\">\n                                <div class=\"h5 mb-0 font-weight-bold text-gray-800 text-center\">\n                                  CBM\n                                </div>\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  Alto: <small>{{box.height}}</small>\n                                </div>\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  Ancho: <small>{{box.width}}</small>\n                                </div>\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  Largo: <small>{{box.length}}</small>\n                                </div>\n                              </div>\n                              <div class=\"col-auto\">\n                                <i class=\"fas fa-box fa-2x text-gray-300\"></i><small> {{box.weight}} kg.</small>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Pie Chart -->\n          <div class=\"col-xl-4 col-lg-5\">\n            <div class=\"card shadow mb-4\">\n              <!-- Card Header - Dropdown -->\n              <div class=\"card-header py-3 d-flex flex-row align-items-center justify-content-between\">\n                <h6 class=\"m-0 font-weight-bold text-primary\">Cliente</h6>\n              </div>\n              <!-- Card Body -->\n              <div class=\"card-body\" style=\"padding-top:0 !important\">\n                <div class=\"chart-pie pt-4 pb-2\" style=\"overflow-y: scroll\">\n                  <div class=\"container\">\n                    <div class=\"row\">\n                      <div class=\"col-12\">\n                        <h4> Daniel Giraldo </h4>\n                        <small> Bogotá, Colombia </small>\n                        <p>\n                          <br />\n                          <i class=\"fas fa-envelope\"></i> d.giraldo12@uniandes.edu.co\n                          <br />\n                          <i class=\"fas fa-phone-square\"></i> (+57) 304 211 9997 </p>\n                      </div>\n                    </div>\n                    <div class=\"row\">\n                      <div class=\"col-12\">\n                        <form>\n                          <div class=\"form-group\">\n                            <label for=\"tracker\">Tracker ID</label>\n                            <input type=\"text\" class=\"form-control\" id=\"tracker\" placeholder=\"Ingrese Tracker ID\"\n                              readonly>\n                            <small id=\"cambiarTracker\" class=\"form-text text-muted\"> Cambiar TrackerID</small>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"ref\">Nº referencia</label>\n                            <input type=\"text\" class=\"form-control\" id=\"ref\" placeholder=\"Ingrese Nº referencia\"\n                              readonly>\n                            <small id=\"cambiarRef\" class=\"form-text text-muted\"> Cambiar Nº referencia</small>\n                          </div>\n                        </form>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"mt-4 text-center small\">\n                  <span class=\"mr-2\">\n                    <i class=\"fas fa-circle text-primary\"></i> Buscar cliente\n                  </span>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n\n    <!-- Footer -->\n    <footer class=\"sticky-footer bg-white fixed-bottom\">\n      <div class=\"container my-auto\">\n        <div class=\"copyright text-center my-auto\">\n          <span> &copy; Daniel Giraldo y David Bautista</span>\n          <small>2019</small>\n        </div>\n      </div>\n    </footer>\n    <!-- End of Footer -->\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<!-- Logout Modal-->\n<div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n  aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n        <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">×</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n      <div class=\"modal-footer\">\n        <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n        <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<!--modal de agregar caja-->\n\n<div class=\"modal fade\" id=\"modalCrearCaja\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"modalCrearCajaTitle\"\n  aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-body\">\n        <div class=\"content-section-heading text-center\">\n          <h3 class=\"text-secondary mb-0\">Agregar caja</h3>\n        </div>\n        <br>\n        <form class=\"form container\" (submit)=\"onRegistroSubmit()\" *ngIf=\"correcto==false\">\n          <div class=\"form-group row\">\n            <div class=\"col-4\">\n             \n              <input type=\"number\" class=\"form-control\" placeholder=\"alto\" [(ngModel)]=\"box_height\"\n                name=\"box_height\">\n            </div>\n            <div class=\"col-4\">\n              \n              <input type=\"number\" class=\"form-control\" placeholder=\"ancho\" [(ngModel)]=\"box_width\"\n                name=\"box_width\">\n            </div>\n            <div class=\"col-4\">\n              \n              <input type=\"number\" class=\"form-control\" placeholder=\"largo\" [(ngModel)]=\"box_length\"\n                name=\"box_length\">\n            </div>\n          </div>\n\n          <div class=\"form-group\">\n            <label for=\"box_weight\" style=\"color:black\">Ingrese el peso de la caja</label>\n            <input type=\"number\" class=\"form-control\" placeholder=\"peso\" [(ngModel)]=\"box_weight\"\n              name=\"box_weight\">\n          </div>\n          <div class=\"form-group\">\n              <label for=\"box_description\" style=\"color:black\">Ingrese una descripción</label>\n              <input type=\"text\" class=\"form-control\" placeholder=\"descripcion\" [(ngModel)]=\"box_description\"\n                name=\"box_description\">\n            </div>\n          <br>\n          <div class=\"form-group\" style=\"text-align:center\">\n            <input class=\"btn btn-success\" type=\"submit\" value=\"Crear\">\n          </div>\n        </form>\n        <h3 *ngIf=\"correcto==true\" class=\"text-success\">Caja guardada correctamente</h3>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!--fin modal agregar caja-->"
+module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\" *ngIf=\"cargado\" style=\"height: 100%;\">\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\">Warehouse ID: {{wh.id}}</h1>\n        </div>\n\n        <!-- Content Row -->\n        <div class=\"row\">\n\n          <!-- Earnings (Monthly) Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-primary shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">Fecha de ingreso</div>\n                    <div class=\"h5 mb-0 font-weight-bold text-gray-800\">{{wh.date_created.split('T')[0]}}</div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-calendar fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Earnings (Monthly) Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-success shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-success text-uppercase mb-1\">Costo (aproximado)</div>\n                    <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$2'500.000</div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-dollar-sign fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Earnings (Monthly) Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-info shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-info text-uppercase mb-1\">Estado de envio</div>\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col-auto\">\n                        <div class=\"h5 mb-0 mr-3 font-weight-bold text-gray-800\">{{percent}}%</div>\n                      </div>\n                      <div class=\"col\">\n                        <div class=\"progress progress-sm mr-2\">\n                          <div class=\"progress-bar bg-info\" role=\"progressbar\" [style.width.%]=\"percent\" [attr.aria-valuenow]=\"percent\"\n                            aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-clipboard-list fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Pending Requests Card Example -->\n          <div class=\"col-xl-3 col-md-6 mb-4\">\n            <div class=\"card border-left-warning shadow h-100 py-2\">\n              <div class=\"card-body\">\n                <div class=\"row no-gutters align-items-center\">\n                  <div class=\"col mr-2\">\n                    <div class=\"text-xs font-weight-bold text-warning text-uppercase mb-1\">Observaciones</div>\n                    <div class=\"h5 mb-0 font-weight-bold text-gray-800\">2</div>\n                  </div>\n                  <div class=\"col-auto\">\n                    <i class=\"fas fa-comments fa-2x text-gray-300\"></i>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <!-- Content Row -->\n\n        <div class=\"row\">\n\n          <!-- Area Chart -->\n          <div class=\"col-xl-8 col-lg-7\">\n            <div class=\"card shadow mb-4\">\n              <!-- Card Header - Dropdown -->\n              <div class=\"card-header py-3 d-flex flex-row align-items-center justify-content-between\">\n                <h6 class=\"m-0 font-weight-bold text-primary\">Cajas</h6>\n              </div>\n              <!-- Card Body -->\n              <div class=\"card-body\" style=\"overflow-y: scroll;\">\n                <div class=\"chart-area\">\n                  <div class=\"container\">\n                    <div class=\"row\">\n                      <div class=\"col-xl-3 col-md-6 mb-4\" style=\"cursor: pointer\" data-toggle=\"modal\"\n                        data-target=\"#modalCrearCaja\">\n                        <div class=\"card border-left-primary shadow h-100 py-2\">\n                          <div class=\"card-body text-center\"\n                            style=\"padding-top:0.3rem !important; padding-bottom:0.3rem !important;\">\n                            <div class=\"row no-gutters align-items-center\">\n                              <div class=\"col mr-2 text-center\">\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  <i class=\"fas fa-plus fa-4x\"></i>\n                                </div>\n                              </div>\n                              <div class=\"col-auto text-center\">\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  <span> Agregar caja </span>\n                                </div>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div class=\"col-xl-3 col-md-6 mb-4\" *ngFor=\"let box of wh.boxes\">\n                        <div class=\"card border-left-primary shadow h-100 py-2\">\n                          <div class=\"card-body\"\n                            style=\"padding-top:0.3rem !important; padding-bottom:0.3rem !important;\">\n                            <div class=\"row no-gutters align-items-center\">\n                              <div class=\"col mr-2\">\n                                <div class=\"h5 mb-0 font-weight-bold text-gray-800 text-center\">\n                                  CBM\n                                </div>\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  Alto: <small>{{box.height}} cm</small>\n                                </div>\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  Ancho: <small>{{box.width}} cm</small>\n                                </div>\n                                <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\n                                  Largo: <small>{{box.length}} cm</small>\n                                </div>\n                              </div>\n                              <div class=\"col-auto\">\n                                <i class=\"fas fa-box fa-2x text-gray-300\"></i><small> {{box.weight}} kg.</small>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Pie Chart -->\n          <div class=\"col-xl-4 col-lg-5\">\n            <div class=\"card shadow mb-4\">\n              <!-- Card Header - Dropdown -->\n              <div class=\"card-header py-3 d-flex flex-row align-items-center justify-content-between\">\n                <h6 class=\"m-0 font-weight-bold text-primary\">Cliente</h6>\n              </div>\n              <!-- Card Body -->\n              <div class=\"card-body\" style=\"padding-top:0 !important\">\n                <div class=\"chart-pie pt-4 pb-2\" style=\"overflow-y: scroll\">\n                  <div class=\"container\">\n                    <div class=\"row\">\n                      <div class=\"col-12\">\n                        <h4> {{nombreCliente}} </h4>\n                        <small *ngIf=\"wh.client != null\"> Bogotá, Colombia </small>\n                        <p *ngIf=\"wh.client != null\">\n                          <br />\n                          <i class=\"fas fa-envelope\"></i> d.giraldo12@uniandes.edu.co\n                          <br />\n                          <i class=\"fas fa-phone-square\"></i> (+57) 304 211 9997 </p>\n                      </div>\n                    </div>\n                    <hr>\n                    <div class=\"row\">\n                      <div class=\"col-12\">\n                        <form>\n                          <div class=\"form-group\" *ngIf=\"false\">\n                            <label for=\"tracker\">Tracker ID</label>\n                            <input type=\"text\" class=\"form-control\" id=\"tracker\" placeholder=\"Ingrese Tracker ID\"\n                              readonly>\n                            <small id=\"cambiarTracker\" class=\"form-text text-muted\"> Cambiar TrackerID</small>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"ref\">Teléfono proveedor</label>\n                            <input type=\"text\" name=\"wh.provider_phone\" [(ngModel)]=\"wh.provider_phone\"\n                              class=\"form-control\" id=\"wh.provider_phone\"\n                              [attr.placeholder]=\"wh.provider_phone==null?'N/A':wh.provider_phone\"\n                              [attr.disabled]=\"disabledTel ? '' : null\" [attr.value]=\"wh.provider_phone\">\n                            <small id=\"cambiarTel\" (click)=\"disabledTel=!disabledTel\" class=\"form-text text-muted\"\n                              style=\"cursor: pointer\">{{ disabledTel?'Cambiar teléfono':'Guardar'}}</small>\n                          </div>\n                        </form>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"mt-4 text-center small\">\n                  <span class=\"mr-2\">\n                    <i class=\"fas fa-circle text-primary\"></i> Buscar cliente\n                  </span>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<!-- Logout Modal-->\n<div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n  aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n        <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">×</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n      <div class=\"modal-footer\">\n        <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n        <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<!--modal de agregar caja-->\n\n<div class=\"modal fade\" id=\"modalCrearCaja\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"modalCrearCajaTitle\"\n  aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-body\">\n        <div class=\"content-section-heading text-center\">\n          <h3 class=\"text-secondary mb-0\">Agregar caja</h3>\n        </div>\n        <br>\n        <div class=\"container\">\n          <div class=\"row\" style=\"margin-bottom: 5px\">\n            <div class=\"col-12\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 453.76 371.26\">\n                <g id=\"Layer_2\" data-name=\"Layer 2\">\n                  <g id=\"Layer_1-2\" data-name=\"Layer 1\">\n                    <path\n                      d=\"M296.21,285H169.76c-67.16,0-121.6,32.69-121.6,73v10.88H417.81V358C417.81,317.66,363.37,285,296.21,285Z\"\n                      style=\"fill:#f4f0ee\" />\n                    <path\n                      d=\"M296.21,285h-20c67.16,0,121.6,32.69,121.6,73v10.88h20V358C417.81,317.66,363.37,285,296.21,285Z\"\n                      style=\"fill:#d7d2d0\" />\n                    <path\n                      d=\"M169.76,285h20c-67.16,0-121.6,32.69-121.6,73v10.88h-20V358C48.16,317.66,102.6,285,169.76,285Z\"\n                      style=\"fill:#fff\" />\n                    <path d=\"M204.05,257.1h57.86V285H204.05Z\" style=\"fill:#fbc24e\" />\n                    <path\n                      d=\"M373,220.69H93l12.24,27.5c2.34,5.25,10.27,8.91,19.32,8.91H341.42c9.05,0,17-3.65,19.32-8.91Z\"\n                      style=\"fill:#f4f0ee\" />\n                    <path d=\"M249.91,257.1h12V285h-12Z\" style=\"fill:#dfa52c\" />\n                    <path d=\"M204.05,257.1h12V285h-12Z\" style=\"fill:#fce16b\" />\n                    <path\n                      d=\"M417.81,371.26H48.15c-2.2,0-4-1.07-4-2.4V358c0-41.58,56.35-75.41,125.6-75.41H296.21c69.26,0,125.6,33.83,125.6,75.41v10.88C421.81,370.19,420,371.26,417.81,371.26Zm-365.66-4.8H413.81V358c0-38.93-52.75-70.61-117.6-70.61H169.76c-64.85,0-117.6,31.68-117.6,70.61v8.48Z\"\n                      style=\"fill:#848383\" />\n                    <path\n                      d=\"M261.92,287.37H204.06c-2.21,0-4-1.07-4-2.4V257.1c0-1.33,1.79-2.4,4-2.4h57.86c2.2,0,4,1.07,4,2.4V285C265.92,286.3,264.12,287.37,261.92,287.37Zm-53.86-4.8h49.86V259.5H208.06Z\"\n                      style=\"fill:#848383\" />\n                    <path\n                      d=\"M301.26,342.15H164.7c-4.47,0-8.1-2.19-8.1-4.87V302.64c0-2.69,3.63-4.87,8.1-4.87H301.26c4.48,0,8.1,2.18,8.1,4.87v34.64C309.37,340,305.74,342.15,301.26,342.15Z\"\n                      style=\"fill:#fbc24e\" />\n                    <path\n                      d=\"M301.26,297.77h-20c4.48,0,8.11,2.18,8.11,4.87v34.64c0,2.68-3.63,4.87-8.11,4.87h20c4.48,0,8.11-2.19,8.11-4.87V302.64C309.37,300,305.74,297.77,301.26,297.77Z\"\n                      style=\"fill:#dfa52c\" />\n                    <path\n                      d=\"M164.7,342.15h20c-4.47,0-8.1-2.19-8.1-4.87V302.64c0-2.69,3.63-4.87,8.1-4.87h-20c-4.47,0-8.1,2.18-8.1,4.87v34.64C156.6,340,160.23,342.15,164.7,342.15Z\"\n                      style=\"fill:#fce16b\" />\n                    <path\n                      d=\"M301.26,344.55H164.7c-6.67,0-12.1-3.27-12.1-7.27V302.64c0-4,5.43-7.27,12.1-7.27H301.26c6.67,0,12.1,3.26,12.1,7.27v34.64C313.36,341.28,307.94,344.55,301.26,344.55ZM164.7,300.17c-2.26,0-4.1,1.11-4.1,2.47v34.64c0,1.36,1.84,2.46,4.1,2.46H301.26c2.26,0,4.1-1.1,4.1-2.46V302.64c0-1.36-1.84-2.47-4.1-2.47Z\"\n                      style=\"fill:#848383\" />\n                    <path d=\"M353,220.69,336.77,257.1h4.65c9.05,0,17-3.66,19.32-8.91L373,220.69Z\"\n                      style=\"fill:#d7d2d0\" />\n                    <path d=\"M113,220.69,129.2,257.1h-4.65c-9,0-17-3.66-19.32-8.91L93,220.69Z\" style=\"fill:#fff\" />\n                    <path\n                      d=\"M341.42,259.5H124.55c-10.85,0-20.38-4.4-23.18-10.69L89.12,221.32a1.72,1.72,0,0,1,.69-2.09,5.31,5.31,0,0,1,3.18-.94H373a5.28,5.28,0,0,1,3.17.94,1.71,1.71,0,0,1,.7,2.09L364.6,248.81C361.79,255.1,352.26,259.5,341.42,259.5ZM98.2,223.09l10.9,24.48c1.87,4.19,8.22,7.13,15.45,7.13H341.42c7.23,0,13.59-2.93,15.45-7.13l10.9-24.48Z\"\n                      style=\"fill:#848383\" />\n                    <path\n                      d=\"M85.66,323.07a6.55,6.55,0,0,1-1.65-.21c-2-.55-2.9-2-2-3.18.24-.31,6-7.75,19.79-15.2a6,6,0,0,1,5.64.18c1.48,1,1.34,2.5-.3,3.39-12.51,6.74-17.79,13.55-17.85,13.62A4.68,4.68,0,0,1,85.66,323.07Z\"\n                      style=\"fill:#848383\" /><text id=\"box_weight\" transform=\"translate(198.1 325.36) scale(1.37 1)\"\n                      style=\"font-size:20.36948013305664px;fill:#21409a;font-family:Roboto-Bold, Roboto;font-weight:700\">{{box_weight}} kg\n                    </text>\n                    <polygon\n                      points=\"314.14 0.5 173.04 0.5 135.91 59.91 135.91 215.86 351.27 215.86 351.27 59.91 314.14 0.5\"\n                      style=\"fill:#a98258\" />\n                    <path\n                      d=\"M265.87,100.75H221.31a7.44,7.44,0,0,1-7.42-7.42h0a7.45,7.45,0,0,1,7.42-7.43h44.56a7.45,7.45,0,0,1,7.43,7.43h0A7.45,7.45,0,0,1,265.87,100.75Z\"\n                      style=\"fill:#5c4732\" />\n                    <path d=\"M273.3,159.4H213.89a3.71,3.71,0,1,0,0,7.42H273.3a3.71,3.71,0,0,0,0-7.42Z\"\n                      style=\"fill:#e8d5b3\" />\n                    <path\n                      d=\"M213.89,129.69a3.66,3.66,0,0,0,2.62-1.09l4.8-4.8v24.46a3.72,3.72,0,0,0,7.43,0V123.8l4.8,4.8a3.7,3.7,0,0,0,2.63,1.09,3.66,3.66,0,0,0,2.62-1.09,3.71,3.71,0,0,0,0-5.25l-11.13-11.13a3.68,3.68,0,0,0-1.21-.81,3.77,3.77,0,0,0-2.84,0,3.58,3.58,0,0,0-1.21.81l-11.14,11.13a3.72,3.72,0,0,0,2.63,6.34Z\"\n                      style=\"fill:#e8d5b3\" />\n                    <path\n                      d=\"M251,129.69a3.7,3.7,0,0,0,2.63-1.09l4.8-4.8v24.46a3.71,3.71,0,1,0,7.42,0V123.8l4.8,4.8a3.7,3.7,0,0,0,2.63,1.09,3.72,3.72,0,0,0,2.62-6.34l-11.13-11.13a3.68,3.68,0,0,0-1.21-.81,3.77,3.77,0,0,0-2.84,0,3.68,3.68,0,0,0-1.21.81l-11.14,11.13a3.72,3.72,0,0,0,2.63,6.34Z\"\n                      style=\"fill:#e8d5b3\" />\n                    <polygon points=\"173.04 0.5 135.91 59.91 351.27 59.91 314.14 0.5 173.04 0.5\" style=\"fill:#daaf86\" />\n                    <rect x=\"239.88\" y=\"0.5\" width=\"7.43\" height=\"59.41\" style=\"fill:#f4d6be\" />\n                    <line x1=\"118.6\" y1=\"59.62\" x2=\"118.6\" y2=\"119.44\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"106.28\" y1=\"59.62\" x2=\"130.93\" y2=\"59.62\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"106.28\" y1=\"215.58\" x2=\"130.93\" y2=\"215.58\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"118.6\" y1=\"155.76\" x2=\"118.6\" y2=\"215.58\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"325.32\" y1=\"0.5\" x2=\"333.34\" y2=\"12.98\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"318.21\" y1=\"0.5\" x2=\"332.42\" y2=\"0.5\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"353.36\" y1=\"44.1\" x2=\"363.53\" y2=\"59.91\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"355.33\" y1=\"59.91\" x2=\"369.54\" y2=\"59.91\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" /><text id=\"box_length\"\n                      transform=\"translate(338.83 33.21)\"\n                      style=\"font-size:21.74376678466797px;fill:#231f20;font-family:Roboto-Bold, Roboto;font-weight:700\">{{box_length}}\n                      cm</text>\n                    <line x1=\"137.91\" y1=\"203.25\" x2=\"184.01\" y2=\"203.25\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"137.91\" y1=\"215.58\" x2=\"137.91\" y2=\"190.92\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"349.27\" y1=\"203.25\" x2=\"303.18\" y2=\"203.25\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" />\n                    <line x1=\"349.27\" y1=\"215.58\" x2=\"349.27\" y2=\"190.92\"\n                      style=\"fill:none;stroke:#231f20;stroke-miterlimit:10\" /><text id=\"box_width\"\n                      transform=\"translate(210.7 210.54)\"\n                      style=\"font-size:21.74376678466797px;fill:#231f20;font-family:Roboto-Bold, Roboto;font-weight:700\">{{box_width}}\n                      cm</text><text id=\"box_height\" transform=\"translate(72.01 140.97)\"\n                      style=\"font-size:21.74376678466797px;fill:#231f20;font-family:Roboto-Bold, Roboto;font-weight:700\">{{box_height}}\n                      cm</text></g>\n                </g>\n              </svg>\n            </div>\n          </div>\n          <div class=\"row\">\n            <form class=\"form container\" (submit)=\"crearCaja()\" *ngIf=\"correcto==false\">\n              <div class=\"form-group row\">\n                <div class=\"col-4\">\n                  <small>Alto</small>\n                  <input type=\"number\" class=\"form-control\" placeholder=\"alto\" [(ngModel)]=\"box_height\"\n                    name=\"box_height\">\n                </div>\n                <div class=\"col-4\">\n                  <small>Ancho</small>\n                  <input type=\"number\" class=\"form-control\" placeholder=\"ancho\" [(ngModel)]=\"box_width\"\n                    name=\"box_width\">\n                </div>\n                <div class=\"col-4\">\n                  <small>Largo</small>\n                  <input type=\"number\" class=\"form-control\" placeholder=\"largo\" [(ngModel)]=\"box_length\"\n                    name=\"box_length\">\n                </div>\n              </div>\n\n              <div class=\"form-group\">\n                <label for=\"box_weight\" style=\"color:black\">Ingrese el peso de la caja</label>\n                <input type=\"number\" class=\"form-control\" placeholder=\"peso\" [(ngModel)]=\"box_weight\" name=\"box_weight\">\n              </div>\n              <br>\n              <div class=\"form-group\" style=\"text-align:center\">\n                <input class=\"btn btn-success\" type=\"submit\" value=\"Crear\" data-toggle=\"modal\"\n                data-target=\"#modalCrearCaja\">\n              </div>\n            </form>\n            <h3 *ngIf=\"correcto==true\" class=\"text-success\">Caja guardada correctamente</h3>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!--fin modal agregar caja-->"
 
 /***/ }),
 
@@ -593,29 +809,53 @@ var WarehouseComponent = /** @class */ (function () {
         this.router = router;
         this.route = route;
         this.correcto = false;
+        this.nombreCliente = "Cliente desconocido";
+        this.disabledTel = true;
         this.cargado = false;
     }
     WarehouseComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.box_length = 40;
+        this.box_height = 40;
+        this.box_width = 40;
+        this.box_weight = 100;
         this.sub = this.route.params.subscribe(function (params) {
             _this.id = +params['id']; // (+) converts string 'id' to a number
             _this.whService.getWh(_this.id).subscribe(function (data) {
                 _this.wh = data;
+                _this.percent = ((_this.wh.number_of_boxes.valueOf() / 100) * _this.wh.number_of_sent_boxes.valueOf() + 10).valueOf();
+                console.log('tipo ' + typeof _this.percent);
+                console.log(_this.percent);
+                console.log('valor '.concat(_this.percent.toString()));
+                if (_this.wh.client === undefined && _this.wh.client == null) {
+                    _this.nombreCliente = _this.wh.client.name;
+                }
+                console.log(_this.wh);
                 _this.cargado = true;
             }, function (err) {
+                console.log(err);
             });
         });
     };
     WarehouseComponent.prototype.crearCaja = function () {
+        var _this = this;
         var newBox = {
             height: this.box_height,
             width: this.box_width,
+            weight: this.box_weight,
             length: this.box_length,
-            description: this.box_description,
             warehouse: this.id
         };
         this.boxService.createBox(newBox).subscribe(function (data) {
+            if (data.id != null) {
+                _this.whService.getWh(_this.id).subscribe(function (data) {
+                    _this.wh.boxes = data.boxes;
+                }, function (err) {
+                    console.log(err);
+                });
+            }
         }, function (err) {
+            console.log(err);
         });
     };
     WarehouseComponent = __decorate([
@@ -640,7 +880,7 @@ var WarehouseComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#labels-lista {\n    padding: 0 1.25rem;\n}\n\n.img-logo{\n    height: 50px;\n    width: auto;\n}\n\n.list-group-item{\n    margin-top: 10px;\n    padding: 0.5rem 1.25rem;\n}\n\n.panel-info{\n    margin: 0;\n    padding: 0;\n}\n\n.col-li{\n    line-height: 50px;\n    vertical-align: center;\n    font-size: 1.1rem;\n    font-weight: 500;\n}\n\n.btn-info{\n    padding: 0;\n}\n\n.btn2{\n    width:2rem;\n}\n\n.container{\n    padding: 0;\n}\n\n.options-nohide {\n    z-index: 100;\n    position: fixed;\n    margin-top: 1.5rem;\n    right: 10px;\n    margin-right: 10px;\n    transition: all .4s;\n    background-color: #4e73df;\n}\n\n.card{\n    background-color: whitesmoke;\n    border-width: 0;\n    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);\n}\n\n.options-hide {\n    z-index: 100;\n    position: fixed;\n    margin-top: 1.5rem;\n    width: 50px;\n    height: 50px;\n    right: 10px;\n    margin-right: 10px;\n    transition: all .4s;\n    background-color: #4e73df;\n    opacity: .5;\n}\n\noptions-content-hide {\n    display: none;\n}\n\ntbody {\n      display:block;\n      overflow:scroll;\n  }\n\nthead, tbody tr {\n      display:table;\n      width:calc(100% - 1px);\n      table-layout:fixed;/* even columns width , fix width of table too*/\n  }\n\nthead {\n      width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */\n  }\n\ntable {\n      width: calc(100% - 1px);\n  }"
+module.exports = "#labels-lista {\n    padding: 0 1.25rem;\n}\n\ntable{\n    font-size: 0.9rem;\n}\n\n.img-logo{\n    height: 50px;\n    width: auto;\n}\n\n.list-group-item{\n    margin-top: 10px;\n    padding: 0.5rem 1.25rem;\n}\n\n.panel-info{\n    margin: 0;\n    padding: 0;\n}\n\n.col-li{\n    line-height: 50px;\n    vertical-align: center;\n    font-size: 1.1rem;\n    font-weight: 500;\n}\n\n.btn-info{\n    padding: 0;\n}\n\n.btn2{\n    width:2rem;\n}\n\n.container{\n    padding: 0;\n}\n\n.options-nohide {\n    z-index: 100;\n    position: fixed;\n    margin-top: 1.5rem;\n    right: 10px;\n    margin-right: 10px;\n    transition: all .4s;\n}\n\n/*.card{*/\n\n/*background-color: whitesmoke;*/\n\n/*border-width: 0;*/\n\n/*box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);*/\n\n/*-moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);*/\n\n/*-webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);*/\n\n/*-o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);*/\n\n/*-ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);*/\n\n/*box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);*/\n\n/*}*/\n\n.options-hidden{\n    border-radius: 0.3rem;\n    background-color: #00953d;\n    padding: 5px;\n}\n\n.fa-cog:before{\n    color: white;\n}\n\n.card{\n}\n\n.options-hide {\n    z-index: 100;\n    position: fixed;\n    margin-top: 1.5rem;\n    width: 50px;\n    height: 50px;\n    right: 10px;\n    margin-right: 10px;\n    transition: all .4s;\n    background-color: #4e73df;\n    opacity: .5;\n}\n\noptions-content-hide {\n    display: none;\n}\n\n.table{\n    width: 80%;\n    margin: 1% 5%;\n    border: 2px solid black;\n}\n\ntr{\n    border-top: 2px solid #767676;\n}\n\nthead{\n    border-bottom: 3px solid black;\n}\n\ntr:nth-child(even){\n    background-color:#f0f0f0;\n}\n\n.id-col{\n    font-weight: bold;\n    border-right: 1px solid #7c7c7c;\n}\n\n.fa-check{\n    color: #00ad41;\n}\n\n.fa-times{\n    color: #d70e00;\n}\n\n.hora{\n    font-size: 0.8rem;\n}\n\n.containerform {\n    padding: 10% 5%;\n}\n\n* {\n    box-sizing: border-box;\n}\n\n/* Style the input container */\n\n.input-containerform {\n    margin-left: 15px;\n    margin-right: 15px;\n    display: flex;\n    width: 100%;\n    margin-bottom: 15px;\n}\n\n/* Style the form icons */\n\n.fasform {\n    padding: 10px;\n    background: #007bff;\n    border-bottom-left-radius: 0.25rem;\n    border-top-left-radius: 0.25rem;\n    color: white;\n    min-width: 50px;\n    text-align: center;\n}\n\n.form-controlform{\n    border-bottom-left-radius: 0px;\n    border-top-left-radius: 0px;\n    border-left-width: 0px;\n}\n\n/* Style the input fields */\n\n.input-fieldform  {\n    width: 100%;\n    padding: 10px;\n    outline: none;\n}\n\n.input-fieldform:focus .fas{\n    border: 2px solid dodgerblue;\n    border-left-width: 0;\n}\n\n.btnform:hover {\n    opacity: 1;\n}\n"
 
 /***/ }),
 
@@ -651,7 +891,7 @@ module.exports = "#labels-lista {\n    padding: 0 1.25rem;\n}\n\n.img-logo{\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [attr.class]=\"options_opened?'card options-nohide':'card options-nohide'\">\n  <div *ngIf=\"options_opened\" class=\"card-body\" style=\"margin:0; padding: 5px;\">\n    <i class=\"fas fa-times\" (click)=\"open_options()\" style=\"color:#811A17;cursor:pointer\"></i>\n    <div class=\"container\">\n      <div class=\"row\" style=\"margin-bottom:10px\">\n        <div class=\"col-12\">\n          <div class=\"custom-control custom-switch\">\n            <input type=\"checkwh\" class=\"custom-control-input\" id=\"customSwitches\" [(ngModel)]=\"completadosSwitch\">\n            <label class=\"custom-control-label\" for=\"customSwitches\">Ver completados</label>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-12 text-center\">\n          <button type=\"button\" class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#modalCreateWarehouse\"\n            style=\"width:90%; margin: 0 auto\">crear warehouse</button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"!options_opened\" class=\"card-body align-items-center d-flex justify-content-center\"\n    (click)=\"open_options()\" style=\"padding: 2px; cursor:pointer; color: gray\">\n    <i class=\"fas fa-pencil-ruler fa-2x\"></i>\n  </div>\n  <div *ngIf=\"options_opened text-center\" class=\"card-footer\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-3 text-left\">\n          <i class=\"fas fa-arrow-left\" style=\"cursor:pointer\" (click)=\"prev_page()\"></i>\n        </div>\n        <div class=\"col-6 text-center\">\n          Página\n        </div>\n        <div class=\"col-3 text-right\">\n          <i class=\"fas fa-arrow-right\" style=\"cursor:pointer\" (click)=\"next_page()\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div>\n  <table class=\"table table-striped\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Cliente</th>\n        <th>Nº cajas</th>\n        <th>Peso</th>\n        <th>Volumen</th>\n        <th>Fecha</th>\n        <th>Estado</th>\n      </tr>\n    </thead>\n    <tbody [style.height.px]=\"calculatedheight\">\n      <tr *ngFor=\"let wh of whs\" style=\"cursor:pointer\" [routerLink]=\"[wh.id]\">\n        <td>{{wh.id}}</td>\n        <td>{{wh.client.name}}</td>\n        <td>{{wh.number_of_boxes}}</td>\n        <td>{{wh.total_weight}} kg.</td>\n        <td>{{wh.total_volume}} m<sup>3</sup></td>\n        <td> {{wh.date_created.replace('T', ' a las ').replace('Z', '').split('.')[0]}}</td>\n        <td><i class=\"fas fa-check\"></i> {{wh.number_of_sent_boxes}} <i class=\"fas fa-times\"></i>\n          {{wh.number_of_unsent_boxes}} </td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n\n\n<!--modal de agregar wh-->\n\n<div class=\"modal fade\" id=\"modalCreateWarehouse\" tabindex=\"-1\" role=\"dialog\"\n  aria-labelledby=\"modalCreateWarehouseTitle\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-body\">\n        <div class=\"content-section-heading text-center\">\n          <h3 class=\"text-secondary mb-0\">Agregar Warehouse</h3>\n        </div>\n        <br>\n        <form class=\"form container\" (submit)=\"onCreateWarehouse()\" *ngIf=\"correcto==false\">\n          <div class=\"form-group\">\n            <label for=\"wh_tracking\" style=\"color:black\">Ingrese el ID tracking (opcional)</label>\n            <input type=\"text\" class=\"form-control\" placeholder=\"ID tracking\" [(ngModel)]=\"wh_tracking\" name=\"wh_tracking\">\n          </div>\n          <div class=\"form-group\">\n            <label for=\"wh_description\" style=\"color:black\">Ingrese una descripción</label>\n            <input type=\"text\" class=\"form-control\" placeholder=\"descripcion\" [(ngModel)]=\"wh_description\"\n              name=\"wh_description\">\n          </div>\n          <br>\n          <div class=\"form-group\" style=\"text-align:center\">\n            <input class=\"btn btn-success\" type=\"submit\" value=\"Crear\">\n          </div>\n        </form>\n        <h3 *ngIf=\"correcto==true\" class=\"text-success\">Caja guardada correctamente</h3>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!--fin modal agregar wh-->"
+module.exports = "<div [attr.class]=\"options_opened?'card options-nohide':'card options-nohide'\">\n  <div *ngIf=\"options_opened\" class=\"card-body\" style=\"margin:0; padding: 5px;\">\n    <i class=\"fas fa-times\" (click)=\"open_options()\" style=\"color:#d70e00;cursor:pointer;font-size:1.5rem\"></i>\n    <div class=\"container\">\n      <div class=\"row\" style=\"margin-bottom:10px\">\n        <div class=\"col-12\">\n          <div class=\"custom-control custom-switch\" style=\"margin-top: 10px\">\n            <input type=\"checkwh\" class=\"custom-control-input\" id=\"customSwitches\" [(ngModel)]=\"completadosSwitch\">\n            <label class=\"custom-control-label\" for=\"customSwitches\">Ver completados</label>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\" style=\"margin-bottom:5px\">\n        <div class=\"col-12\">\n          <form>\n            <div class=\"form-group form-controlform row\" style=\"margin-bottom: 1px\">\n              <!--<label for=\"correo\">Correo</label>-->\n              <div class=\"input-container input-containerform\">\n                <i class=\"fas fasform fa-user \"></i>\n                <input type=\"number\" class=\"form-control form-controlform\" id=\"clientfilter\" name=\"clientfilter\"\n                  placeholder=\"Filtrar por cliente\" [(ngModel)]=\"clientfilter\" (change)=\"filtrar()\">\n              </div>\n            </div>\n            <div class=\"form-group form-controlform row\">\n              <!--<label for=\"correo\">Correo</label>-->\n              <div class=\"input-container input-containerform\">\n                  <i class=\"fas fasform fa-truck\"></i>\n                <input type=\"number\" class=\"form-control form-controlform\" id=\"providerfilter\" name=\"providerfilter\"\n                  placeholder=\"Filtrar por proveedor\" [(ngModel)]=\"providerfilter\" (change)=\"filtrar()\">\n              </div>\n            </div>\n          </form>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-12 text-center\">\n          <button type=\"button\" class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#modalCreateWarehouse\"\n            style=\"width:90%; margin: 0 auto; padding: 5px\">Crear Warehouse\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"!options_opened\" class=\"options-hidden card-body align-items-center d-flex justify-content-center\"\n    (click)=\"open_options()\">\n    <i class=\"fas fa-cog fa-2x\"></i>\n  </div>\n  <div *ngIf=\"options_opened text-center\" class=\"card-footer\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-3 text-left\">\n          <i class=\"fas fa-arrow-left\" style=\"cursor:pointer\" (click)=\"prev_page()\"></i>\n        </div>\n        <div class=\"col-6 text-center\">\n          <i class=\"fa fa-book-open\"></i> Página\n        </div>\n        <div class=\"col-3 text-right\">\n          <i class=\"fas fa-arrow-right\" style=\"cursor:pointer\" (click)=\"next_page()\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th class=\"id-col\">ID</th>\n        <th>Cliente</th>\n        <th>Tracker</th>\n        <th>Nº cajas</th>\n        <th>Peso</th>\n        <th>Volumen</th>\n        <th class=\"fecha\">Fecha</th>\n        <th>Estado</th>\n      </tr>\n    </thead>\n    <tbody [style.height.px]=\"calculatedheight\">\n      <tr class=\"fila\" *ngFor=\"let wh of whs\" style=\"cursor:pointer\" [routerLink]=\"[wh.id]\">\n        <td class=\"id-col\">{{wh.id}}</td>\n        <td>{{wh.client_id||\"-\"}}</td>\n        <td>{{wh.tracker||\"-\"}}</td>\n        <td>{{wh.number_of_boxes}}</td>\n        <td>{{wh.total_weight}} Kg</td>\n        <td>{{wh.total_volume}} m<sup>3</sup></td>\n        <td class=\"fecha\">{{wh.dia}} <span class=\"hora\">{{wh.hora}}:{{wh.minuto}}</span></td>\n        <td>{{wh.number_of_sent_boxes}} <i class=\"fas fa-check\"></i> {{wh.number_of_unsent_boxes}} <i\n            class=\"fas fa-times\"></i>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n\n<!--modal de agregar wh-->\n<app-crearwarehouse></app-crearwarehouse>\n\n\n<!--fin modal agregar wh-->"
 
 /***/ }),
 
@@ -668,6 +908,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _services_warehouses_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/warehouses.service */ "./src/app/services/warehouses.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -677,6 +918,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -692,8 +934,9 @@ var WarehousesComponent = /** @class */ (function () {
             var _this = this;
             this.page++;
             this.whService.getWhs(this.page).subscribe(function (data) {
-                if (data.count != 0) {
+                if (data.count !== 0) {
                     _this.whs = data.results;
+                    _this.processDates();
                 }
             }, function (err) {
                 console.log(err);
@@ -703,8 +946,9 @@ var WarehousesComponent = /** @class */ (function () {
             var _this = this;
             this.page--;
             this.whService.getWhs(this.page).subscribe(function (data) {
-                if (data.count != 0) {
+                if (data.count !== 0) {
                     _this.whs = data.results;
+                    _this.processDates();
                 }
             }, function (err) {
                 console.log(err);
@@ -713,21 +957,48 @@ var WarehousesComponent = /** @class */ (function () {
         this.open_options = function () {
             this.options_opened = !this.options_opened;
         };
+        this.filtrar = function () {
+            var _this = this;
+            if (this.clientfilter != this.clientfilter2 || this.providerfilter != this.providerfilter2) {
+                var filtro = this.clientfilter != null ? "&client=" + this.clientfilter + (this.providerfilter != null ? "&provider=" + this.providerfilter : "") : this.providerfilter != null ? "&provider=" + this.providerfilter : "";
+                this.clientfilter2 = this.clientfilter;
+                this.providerfilter2 = this.providerfilter;
+                console.log(filtro);
+                this.whService.getWhs(this.page, filtro).subscribe(function (data) {
+                    if (data.count !== 0) {
+                        _this.whs = data.results;
+                        _this.processDates();
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+        };
     }
     WarehousesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.page = 1;
         this.calculatedheight = window.innerHeight;
-        this.whService.getWhs(this.page).subscribe(function (data) {
-            if (data.count != 0) {
+        this.whService.getWhs(this.page, "").subscribe(function (data) {
+            if (data.count !== 0) {
                 _this.whs = data.results;
+                _this.processDates();
             }
         }, function (err) {
             console.log(err);
         });
+        var secondsCounter = Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["interval"])(100);
+        secondsCounter.subscribe(function (n) { return _this.filtrar(); });
     };
     WarehousesComponent.prototype.onResize = function (event) {
         this.calculatedheight = window.innerHeight;
+    };
+    WarehousesComponent.prototype.processDates = function () {
+        this.whs.forEach(function (wh) {
+            wh.dia = wh.date_created.split('T')[0];
+            wh.hora = wh.date_created.split('T')[1].split('.')[0].split(':')[0];
+            wh.minuto = wh.date_created.split('T')[1].split('.')[0].split(':')[1];
+        });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('window:resize', ['$event']),
@@ -744,6 +1015,89 @@ var WarehousesComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_warehouses_service__WEBPACK_IMPORTED_MODULE_2__["WarehousesService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], WarehousesComponent);
     return WarehousesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/crear-usuario-admin/crear-usuario-admin.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/crear-usuario-admin/crear-usuario-admin.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\n    padding: 10% 5%;\n}\n\n\n* {\n    box-sizing: border-box;\n}\n\n\n/* Style the input container */\n\n\n.input-container {\n    margin-left: 15px;\n    margin-right: 15px;\n    display: flex;\n    width: 100%;\n    margin-bottom: 15px;\n}\n\n\n/* Style the form icons */\n\n\n.fas {\n    padding: 10px;\n    background: #007bff;\n    border-bottom-left-radius: 0.25rem;\n    border-top-left-radius: 0.25rem;\n    color: white;\n    min-width: 50px;\n    text-align: center;\n}\n\n\n.form-control{\n    border-bottom-left-radius: 0px;\n    border-top-left-radius: 0px;\n    border-left-width: 0px;\n}\n\n\n/* Style the input fields */\n\n\n.input-field  {\n    width: 100%;\n    padding: 10px;\n    outline: none;\n}\n\n\n.input-field:focus .fas{\n    border: 2px solid dodgerblue;\n    border-left-width: 0;\n}\n\n\n.btn:hover {\n    opacity: 1;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/crear-usuario-admin/crear-usuario-admin.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/crear-usuario-admin/crear-usuario-admin.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-3\"></div>\n    <div class=\"col-lg-6 col-sm-12\">\n\n      <h2>Crear Usuario Administrador</h2>\n      <br>\n\n      <form (submit)=\"crearUsuarioAdmin()\">\n\n        <div class=\"form-group row\">\n          <!--<label for=\"correo\">Correo</label>-->\n          <div class=\"input-container\">\n            <i class=\"fas fa-envelope \"></i>\n            <input type=\"text\" class=\"form-control\" id=\"correo\" name=\"correo\" placeholder=\"Email\" [(ngModel)]=\"email\">\n          </div>\n        </div>\n\n        <div class=\"form-group row\">\n          <!--<label for=\"correo\">Correo</label>-->\n          <div class=\"input-container\">\n            <i class=\"fas fa-user \"></i>\n            <input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\" placeholder=\"Nombre\" [(ngModel)]=\"name\">\n          </div>\n        </div>\n\n        <input type=\"submit\" class=\"btn btn-primary\" value=\"Crear\">\n      </form>\n    </div>\n    <div class=\"col-lg-3\"></div>\n  </div>\n\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/crear-usuario-admin/crear-usuario-admin.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/crear-usuario-admin/crear-usuario-admin.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: CrearUsuarioAdminComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CrearUsuarioAdminComponent", function() { return CrearUsuarioAdminComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CrearUsuarioAdminComponent = /** @class */ (function () {
+    function CrearUsuarioAdminComponent(userService, flashMessage) {
+        this.userService = userService;
+        this.flashMessage = flashMessage;
+    }
+    CrearUsuarioAdminComponent.prototype.ngOnInit = function () {
+    };
+    CrearUsuarioAdminComponent.prototype.crearUsuario = function () {
+        var _this = this;
+        this.userService.createAdminUser(this.email, this.name).subscribe(function (usuario) {
+            console.log(usuario);
+            _this.flashMessage.showFlashMessage({
+                messages: ['Se creo el usuario' + _this.email + ' exitosamente. Revisar correo para establecer la contraseña.'],
+                type: 'success',
+                timeout: 5000,
+            });
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    CrearUsuarioAdminComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-crear-usuario-admin',
+            template: __webpack_require__(/*! ./crear-usuario-admin.component.html */ "./src/app/crear-usuario-admin/crear-usuario-admin.component.html"),
+            styles: [__webpack_require__(/*! ./crear-usuario-admin.component.css */ "./src/app/crear-usuario-admin/crear-usuario-admin.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"], ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__["NgFlashMessageService"]])
+    ], CrearUsuarioAdminComponent);
+    return CrearUsuarioAdminComponent;
 }());
 
 
@@ -780,9 +1134,55 @@ var AuthGuard = /** @class */ (function () {
         this.authService = authService;
         this.router = router;
     }
-    AuthGuard.prototype.canActivate = function () {
+    AuthGuard.prototype.canActivate = function (route, state) {
+        var _this = this;
+        var level = route.data["level"];
         if (this.authService.loggedIn()) {
-            return true;
+            if (level == 0) {
+                return true;
+            }
+            else if (level == 3 && this.authService.darUsuario().subscribe(function (data) {
+                if (JSON.parse(data).is_admin) {
+                    return true;
+                }
+                else {
+                    _this.router.navigate(['/']);
+                    return false;
+                }
+            }, function (err) {
+                _this.router.navigate(['/']);
+                return false;
+            })) {
+                return true;
+            }
+            else if (level == 2 && this.authService.darUsuario().subscribe(function (data) {
+                if (JSON.parse(data).is_agent || JSON.parse(data).is_admin) {
+                    return true;
+                }
+                else {
+                    _this.router.navigate(['/']);
+                    return false;
+                }
+            }, function (err) {
+                _this.router.navigate(['/']);
+                return false;
+            })) {
+                return true;
+            }
+            else if (level == 1 && this.authService.darUsuario().subscribe(function (data) {
+                if (JSON.parse(data).is_warehouse || JSON.parse(data).is_agent || JSON.parse(data).is_admin) {
+                    return true;
+                }
+                else {
+                    _this.router.navigate(['/']);
+                    return false;
+                }
+            }, function (err) {
+                _this.router.navigate(['/']);
+                return false;
+            })) {
+                return true;
+            }
         }
         else {
             this.router.navigate(['/login']);
@@ -894,6 +1294,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -903,6 +1304,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -957,14 +1359,14 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.authenticateUser = function (user) {
         return this.http2.post('http://157.230.14.37:8000/api/token-auth/', user, httpOptions);
     };
-    AuthService.prototype.getProfile = function (token, email) {
+    AuthService.prototype.getProfile = function (token) {
         var httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
                 'Content-Type': 'application/json',
-                'Authorization': 'token ' + token
+                'Authorization': 'JWT ' + token
             })
         };
-        return this.http2.get('http://157.230.14.37:8000/api/usuarios/' + email, httpOptions);
+        return this.http2.get('http://157.230.14.37:8000/api/users/current-user/', httpOptions);
     };
     AuthService.prototype.storeUserData = function (token) {
         localStorage.setItem('id_token', token);
@@ -978,6 +1380,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.loadToken = function () {
         var token = localStorage.getItem('id_token');
         this.authToken = token;
+        return this.authToken;
     };
     AuthService.prototype.loadUser = function () {
         var user = localStorage.getItem('user');
@@ -992,13 +1395,32 @@ var AuthService = /** @class */ (function () {
             return false;
         }
         else {
-            return true;
+            var helper = new _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__["JwtHelperService"]();
+            return !helper.isTokenExpired(localStorage.id_token);
         }
     };
     AuthService.prototype.logout = function () {
         this.authToken = null;
         this.user = null;
         localStorage.clear();
+    };
+    AuthService.prototype.isAgent = function () {
+        this.loadUser();
+        if (this.user !== null && this.user !== undefined) {
+            return JSON.parse(this.user).is_agent;
+        }
+        else {
+            return false;
+        }
+    };
+    AuthService.prototype.isAdmin = function () {
+        this.loadUser();
+        if (this.user !== null && this.user !== undefined) {
+            return JSON.parse(this.user).is_admin;
+        }
+        else {
+            return false;
+        }
     };
     AuthService.prototype.guardarheighfooter = function (hig) {
         this.footerhight = hig;
@@ -1029,6 +1451,13 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.sacarsegundociclo = function () {
         return this.cont;
+    };
+    AuthService.prototype.refreshToken = function () {
+        this.loadToken();
+        var bodyToken = {
+            token: this.authToken
+        };
+        return this.http2.post('http://157.230.14.37:8000/api/token-refresh/', bodyToken, httpOptions);
     };
     AuthService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
@@ -1113,6 +1542,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BoxesService", function() { return BoxesService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1124,24 +1554,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
         'Content-Type': 'application/json'
     })
 };
 var BoxesService = /** @class */ (function () {
-    function BoxesService(http) {
+    function BoxesService(http, authService) {
         this.http = http;
+        this.authService = authService;
+        this.token = "";
     }
     BoxesService.prototype.getBoxes = function (wh) {
         return this.http.get('http://157.230.14.37:8000/api/warehouses/' + wh + "/boxes/");
     };
     BoxesService.prototype.createBox = function (box) {
-        return this.http.post('http://157.230.14.37:8000/api/boxes/', box, httpOptions);
+        this.token = this.authService.loadToken();
+        var httpOptions2 = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + this.token
+            })
+        };
+        return this.http.post('http://157.230.14.37:8000/api/boxes/', box, httpOptions2);
     };
     BoxesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
     ], BoxesService);
     return BoxesService;
 }());
@@ -1400,6 +1840,75 @@ var ReseniasService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/user.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/user.service.ts ***!
+  \******************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var API_URL = 'http://157.230.14.37:8000/api/';
+var user = 'usuarios';
+var UserService = /** @class */ (function () {
+    function UserService(http) {
+        this.http = http;
+        this.auto = 'token';
+    }
+    UserService.prototype.getUser = function (name) {
+        return this.http.get(API_URL + user + '/' + name);
+    };
+    UserService.prototype.createWarehouseUser = function (email, name) {
+        var token = localStorage.getItem('id_token');
+        var newUser = { email: email, name: name };
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + token
+            })
+        };
+        return this.http.post(API_URL + 'warehouse-users/', newUser, httpOptions);
+    };
+    UserService.prototype.createAdminUser = function (email, name) {
+        var token = localStorage.getItem('id_token');
+        var newUser = { email: email, name: name };
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + token
+            })
+        };
+        return this.http.post(API_URL + 'admin-users/', newUser, httpOptions);
+    };
+    UserService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"]]
+        }),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], UserService);
+    return UserService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/validate.service.ts":
 /*!**********************************************!*\
   !*** ./src/app/services/validate.service.ts ***!
@@ -1449,6 +1958,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WarehousesService", function() { return WarehousesService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1460,27 +1970,46 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var httpOptions = {
-    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
-        'Content-Type': 'application/json'
-    })
-};
+
 var WarehousesService = /** @class */ (function () {
-    function WarehousesService(http) {
+    function WarehousesService(http, authService) {
         this.http = http;
+        this.authService = authService;
+        this.token = "";
     }
-    WarehousesService.prototype.getWhs = function (page) {
-        return this.http.get('http://157.230.14.37:8000/api/warehouses?page=' + page);
+    WarehousesService.prototype.getWhs = function (page, filtro) {
+        this.token = this.authService.loadToken();
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + this.token
+            })
+        };
+        return this.http.get('http://157.230.14.37:8000/api/warehouses?page=' + page + filtro, httpOptions);
     };
     WarehousesService.prototype.getWh = function (id) {
-        return this.http.get('http://157.230.14.37:8000/api/warehouses/' + id);
+        this.token = this.authService.loadToken();
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + this.token
+            })
+        };
+        return this.http.get('http://157.230.14.37:8000/api/warehouses/' + id, httpOptions);
     };
     WarehousesService.prototype.createWh = function (wh) {
+        this.token = this.authService.loadToken();
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + this.token
+            })
+        };
         return this.http.post('http://157.230.14.37:8000/api/warehouses/', wh, httpOptions);
     };
     WarehousesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
     ], WarehousesService);
     return WarehousesService;
 }());
