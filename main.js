@@ -360,12 +360,16 @@ var CrearUsuarioWarehouseComponent = /** @class */ (function () {
         this.userService.createWarehouseUser(this.email, this.name).subscribe(function (usuario) {
             console.log(usuario);
             _this.flashMessage.showFlashMessage({
-                messages: ['Se creo el usuario' + _this.email + ' exitosamente. Revisar correo para establecer la contraseña.'],
+                messages: ['Se creo el usuario ' + _this.email + ' exitosamente. Revisar correo para establecer la contraseña.'],
                 type: 'success',
                 timeout: 5000,
             });
         }, function (error) {
-            console.log(error);
+            _this.flashMessage.showFlashMessage({
+                messages: ['El usuario con el correo ' + _this.email + ' ya existe.'],
+                type: 'danger',
+                timeout: 5000,
+            });
         });
     };
     CrearUsuarioWarehouseComponent = __decorate([
@@ -1081,12 +1085,17 @@ var CrearUsuarioAdminComponent = /** @class */ (function () {
         this.userService.createAdminUser(this.email, this.name).subscribe(function (usuario) {
             console.log(usuario);
             _this.flashMessage.showFlashMessage({
-                messages: ['Se creo el usuario' + _this.email + ' exitosamente. Revisar correo para establecer la contraseña.'],
+                messages: ['Se creo el usuario ' + _this.email + ' exitosamente. Revisar correo para establecer la contraseña.'],
                 type: 'success',
                 timeout: 5000,
             });
         }, function (error) {
             console.log(error);
+            _this.flashMessage.showFlashMessage({
+                messages: ['El usuario con el correo ' + _this.email + ' ya existe.'],
+                type: 'danger',
+                timeout: 5000,
+            });
         });
     };
     CrearUsuarioAdminComponent = __decorate([
